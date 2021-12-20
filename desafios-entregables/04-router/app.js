@@ -55,22 +55,20 @@ apiRouter.put("/:id", async (req, res, next) => {
   try {
     const producto = await productos
       .getById(Number(req.params.id))
-      .then((resolve) => resolve);
+      .then((res) => res);
     if (!producto) {
       throw new Error("Producto no encontrado");
     }
-    if (!req.body.title || !req.body.price || !req.body.thumbnail) {
-      throw new Error("Debes enviar un producto con nombre, precio y URL");
-    }
-    const productoActualizado = {
-      title: req.body.title,
-      price: req.body.price,
-      thumbnail: req.body.thumbnail,
-    };
-    await productos.deleteById(Number(req.params.id));
-    await productos.save(productoActualizado).then((resolve) => {
-      res.json(resolve);
-    });
+    await productos
+      .update(
+        Number(req.params.id),
+        req.body.title,
+        req.body.price,
+        req.body.thumbnail
+      )
+      .then((resolve) => {
+        res.json(resolve);
+      });
   } catch (err) {
     next(err);
   }
@@ -84,7 +82,7 @@ apiRouter.delete("/:id", async (req, res, next) => {
       throw new Error("Producto no encontrado");
     }
     await productos.deleteById(Number(req.params.id)).then((resolve) => {
-      res.json("Producto borrado");
+      res.json(`${producto.title} se borro con éxito`);
     });
   } catch (err) {
     next(err);

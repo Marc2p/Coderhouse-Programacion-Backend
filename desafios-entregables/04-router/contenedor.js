@@ -102,6 +102,25 @@ class Contenedor {
       throw error;
     }
   }
+
+  async update (id, title, price, thumbnail) {
+    try {
+      const productos = await this.getAll().then((res) => res);
+      productos.map((producto) => {
+        if (producto.id === id) {
+          producto.title = title ? title : producto.title
+          producto.price = price ? price : producto.price
+          producto.thumbnail = thumbnail ? thumbnail : producto.thumbnail
+        }
+      });
+      await this.deleteAll();
+      fs.writeFileSync(this.archivo, JSON.stringify(productos), 'utf-8');
+      const productoActualizado = await this.getById(id).then((res) => res);
+      return productoActualizado;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = Contenedor;
