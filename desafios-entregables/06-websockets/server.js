@@ -24,10 +24,16 @@ apiRouter.use(express.urlencoded({ extended: true }));
 
 let productos = new Contenedor("./productos.txt");
 
-io.on('connection', async (Socket) => {
+io.on('connection', async (socket) => {
   console.log('Un cliente se ha conectado');
   const arrayDeProductos = await productos.getAll().then((resolve) => resolve);
-  Socket.emit('productos', arrayDeProductos);
+  socket.emit('productos', arrayDeProductos);
+  
+  socket.on('new-product', async (data) => {
+    await productos.save(data).then((resolve) => resolve);
+    const arrayDeProductos = await productos.getAll().then((resolve) => resolve);
+    io.sockets.emit('productos', arrayDeProductos);
+  })
 });
 
 apiRouter.get('/', async (req, res, next) => {
