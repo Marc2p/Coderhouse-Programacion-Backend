@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8080;
-const admin = false;
+const admin = true;
 
 const apiProductos = require('./controllers/productos')
 const apiCarritos = require('./controllers/carritos')
@@ -34,15 +34,16 @@ app.delete('/api/productos/:id', (req, res, next) => {
 
 app.use('/api/productos', apiProductos);
 app.use('/api/carrito', apiCarritos);
+
+app.use((error, req, res, next) => {
+  console.log(error.message);
+  res.status(400).json({"error": 400, "descripcion": error.message});
+});
 app.use((req, res, next) => {
   res.status(404).json({error: 404, descripcion: `Ruta ${req.url} método ${req.method} no implementados`});
 });
 
 const server = app.listen(PORT, () => {
-  console.log(
-    `Servidor Express escuchando peticiones en el puerto ${
-      server.address().port
-    }`
-  );
+  console.log(`Servidor Express escuchando peticiones en el puerto ${server.address().port}`);
 });
 server.on("error", (error) => console.log(`Error en servidor ${error}`));
