@@ -1,4 +1,3 @@
-// const Productos = require("./models/productos");
 // const Carritos = require("./models/carritos");
 const express = require("express");
 const app = express();
