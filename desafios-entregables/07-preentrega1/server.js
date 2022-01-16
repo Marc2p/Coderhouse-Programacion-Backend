@@ -35,7 +35,7 @@ app.use('/api/productos', apiProductos);
 app.use('/api/carrito', apiCarritos);
 
 app.use((error, req, res, next) => {
-  console.log(error.message);
+  console.log(error);
   res.status(400).json({"error": 400, "descripcion": error.message});
 });
 app.use((req, res, next) => {

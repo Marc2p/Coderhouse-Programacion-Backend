@@ -71,12 +71,13 @@ class Carritos {
       }
       for (let carrito of array) {
         if (carrito.id === id) {
-          carrito.productos.push(product)
+          carrito.productos.push(product);
+          const data = JSON.stringify(array);
+          fs.writeFileSync(this.archivo, data, "utf-8");
+          return carrito;
         }
       }
-      const data = JSON.stringify(array);
-      fs.writeFileSync(this.archivo, data, "utf-8");
-      return array;    
+      return null;
     } catch (error) {
       throw error;
     }
@@ -100,17 +101,19 @@ class Carritos {
       let array = await this.getAllCarts().then((res) => res).catch((error) => {
         throw error;
       });
-      if (array.length >= 1) {
-        array = array.filter((obj) => {
-          return obj.id !== id;
-        });
-        for (let i = 0; i < array.length; i++) {
-          if (array[i].id > id) {
-            array[i].id -= 1;
-          }
-        }
-        fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
+      if (array.length <= 0) {
+        return null;
       }
+      array = array.filter((obj) => {
+        return obj.id !== id;
+      });
+      for (let i = 0; i < array.length; i++) {
+        if (array[i].id > id) {
+          array[i].id -= 1;
+        }
+      }
+      fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
+      return id;
     } catch (error) {
       throw error;
     }
@@ -121,16 +124,19 @@ class Carritos {
       let array = await this.getAllCarts().then((res) => res).catch((error) => {
         throw error;
       });
-      if (array.length >= 1) {
-        for (let carrito of array) {
-          if (carrito.id === id) {
-            carrito.productos = carrito.productos.filter((prod) => {
-              return prod.id != id_prod;
-            });
-          }
+      if (array.length <= 0) {
+        return null;
+      }
+      for (let carrito of array) {
+        if (carrito.id === id) {
+          carrito.productos = carrito.productos.filter((prod) => {
+            return prod.id != id_prod;
+          });
+          fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
+          return carrito;
         }
       }
-      fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
+      return null;
     } catch (error) {
       throw error;
     }
