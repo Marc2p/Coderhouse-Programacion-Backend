@@ -101,8 +101,14 @@ class Carritos {
       let array = await this.getAllCarts().then((res) => res).catch((error) => {
         throw error;
       });
+      let cartToDelete;
       if (array.length <= 0) {
         return null;
+      }
+      for (let carrito of array) {
+        if (carrito.id === id) {
+          cartToDelete = carrito;
+        }
       }
       array = array.filter((obj) => {
         return obj.id !== id;
@@ -112,8 +118,11 @@ class Carritos {
           array[i].id -= 1;
         }
       }
+      if (!cartToDelete) {
+        return null;
+      }
       fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
-      return id;
+      return cartToDelete;
     } catch (error) {
       throw error;
     }
@@ -124,19 +133,23 @@ class Carritos {
       let array = await this.getAllCarts().then((res) => res).catch((error) => {
         throw error;
       });
+      let productoBorrado;
       if (array.length <= 0) {
         return null;
       }
       for (let carrito of array) {
         if (carrito.id === id) {
           carrito.productos = carrito.productos.filter((prod) => {
+            productoBorrado = prod.id === id_prod ? prod : null;
             return prod.id != id_prod;
           });
-          fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
-          return carrito;
         }
       }
-      return null;
+      if (!productoBorrado) {
+        return null;
+      }
+      fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
+      return productoBorrado;
     } catch (error) {
       throw error;
     }

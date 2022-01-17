@@ -66,7 +66,11 @@ apiCarritos
   })
   .delete("/:id", async (req, res, next) => {
     try {
-      
+      const cart = await carritos.deleteCartById(Number(req.params.id)).then((res) => res);
+      if (!cart) {
+        throw new Error('Carrito no encontrado');
+      }
+      res.json(cart);
     } catch (error) {
       next(error);
     }
