@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8080;
-const admin = true;
+admin = true;
 
 const apiProductos = require('./controllers/productos')
 const apiCarritos = require('./controllers/carritos')
 
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

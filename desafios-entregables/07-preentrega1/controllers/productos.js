@@ -12,7 +12,7 @@ apiProductos
         if (arrayDeProductos.length <= 0) {
           throw new Error("No hay productos");
         }
-        res.json(arrayDeProductos);
+        res.json({"productos": arrayDeProductos, "admin": admin});
       }
       const producto = await productos.getProductById(Number(req.params.id)).then((resolve) => resolve);
       if (!producto) {
