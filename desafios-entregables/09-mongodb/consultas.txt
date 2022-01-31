@@ -1,0 +1,323 @@
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("4b8e199c-3a46-4f61-be36-4d848a16c04c") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2022-01-30T19:34:51.633-03:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2022-01-30T19:34:52.541-03:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2022-01-30T19:34:52.541-03:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+        2022-01-30T19:34:52.542-03:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+        2022-01-30T19:34:52.542-03:00: Soft rlimits for open file descriptors too low
+        2022-01-30T19:34:52.542-03:00:         currentValue: 1024
+        2022-01-30T19:34:52.542-03:00:         recommendedMinimum: 64000
+---
+> show dbs
+admin      0.000GB
+config     0.000GB
+ecommerce  0.000GB
+local      0.000GB
+> use ecommerce
+switched to db ecommerce
+> show collections
+mensajes
+productos
+> db.productos.insertMany( [ {
+title: 'Bolígrafo',
+price: 150,
+thumbnail: "https://vic.com/boli.png"
+},
+{
+title: 'Compás',
+price: 342,
+thumbnail: "https://pas.com/compas.png"
+},
+{
+title: 'Barbie',
+price: 2364,
+thumbnail: "https://barbie.com/fashion.png" 
+},
+{
+title: 'Reproductor DVD',
+price: 4389,
+thumbnail: "https://tecno.com/dvd.png" 
+},
+{
+title: 'Monóculo',
+price: 1946,
+thumbnail: "https://desaprobacion.com/monoculos-para-sospechar.png" 
+},
+{
+title: 'Estufa',
+price: 793,
+thumbnail: "https://primeranecesidad.com/estufas-para-vitoria.png" 
+},
+{
+title: 'Baraja de cartas',
+price: 307,
+thumbnail: "https://escobeando.com/barajas.png" 
+},
+{
+title: 'AirPods',
+price: 4937,
+thumbnail: "https://comprateunos.com/te-cambiaran-la-vida.png" 
+},
+{
+title: 'Amazon Echo',
+price: 3938,
+thumbnail: "https://amazon.com/dropin-siempre.png" 
+},
+{
+title: 'Diccionario español-suahili',
+price: 832,
+thumbnail: "https://paquequieroesto.com/meexplicas.png" 
+}])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("61f725f446f2d691adf66b83"),
+		ObjectId("61f725f446f2d691adf66b84"),
+		ObjectId("61f725f446f2d691adf66b85"),
+		ObjectId("61f725f446f2d691adf66b86"),
+		ObjectId("61f725f446f2d691adf66b87"),
+		ObjectId("61f725f446f2d691adf66b88"),
+		ObjectId("61f725f446f2d691adf66b89"),
+		ObjectId("61f725f446f2d691adf66b8a"),
+		ObjectId("61f725f446f2d691adf66b8b"),
+		ObjectId("61f725f446f2d691adf66b8c")
+	]
+}
+> db.mensajes.insertMany( [ {
+email: "mp2205@gmail.com",
+message: "Hola",
+date: "30/01/2022 20:30:00"
+},
+{
+email: "apm1405@gmail.com",
+message: "Holiii",
+date: "30/01/2022 20:30:10"
+},
+{
+email: "mp2205@gmail.com",
+message: "Como estas?",
+date: "30/01/2022 20:31:20"
+},
+{
+email: "apm1405@gmail.com",
+message: "Bien y tu?",
+date: "30/01/2022 20:32:15"
+},
+{
+email: "mp2205@gmail.com",
+message: "Todo tranqui",
+date: "30/01/2022 20:32:51"
+},
+{
+email: "mp2205@gmail.com",
+message: "Que haces?",
+date: "30/01/2022 20:33:08"
+},
+{
+email: "apm1405@gmail.com",
+message: "Leer, tu?",
+date: "30/01/2022 20:34:00"
+},
+{
+email: "mp2205@gmail.com",
+message: "Acá, haciendo el challenge para Coderhouse y hablando solo",
+date: "30/01/2022 20:34:30"
+},
+{
+email: "apm1405@gmail.com",
+message: "Bueno, me tengo que ir",
+date: "30/01/2022 20:35:24"
+},
+{
+email: "mp2205@gmail.com",
+message: "Yo también, mas que nada porque este es el último mensaje. Adiós!",
+date: "30/01/2022 20:35:44"
+}
+])
+{
+	"acknowledged" : true,
+	"insertedIds" : [
+		ObjectId("61f7260946f2d691adf66b8d"),
+		ObjectId("61f7260946f2d691adf66b8e"),
+		ObjectId("61f7260946f2d691adf66b8f"),
+		ObjectId("61f7260946f2d691adf66b90"),
+		ObjectId("61f7260946f2d691adf66b91"),
+		ObjectId("61f7260946f2d691adf66b92"),
+		ObjectId("61f7260946f2d691adf66b93"),
+		ObjectId("61f7260946f2d691adf66b94"),
+		ObjectId("61f7260946f2d691adf66b95"),
+		ObjectId("61f7260946f2d691adf66b96")
+	]
+}
+> db.productos.find()
+{ "_id" : ObjectId("61f725f446f2d691adf66b83"), "title" : "Bolígrafo", "price" : 150, "thumbnail" : "https://vic.com/boli.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b84"), "title" : "Compás", "price" : 342, "thumbnail" : "https://pas.com/compas.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b85"), "title" : "Barbie", "price" : 2364, "thumbnail" : "https://barbie.com/fashion.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b86"), "title" : "Reproductor DVD", "price" : 4389, "thumbnail" : "https://tecno.com/dvd.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b87"), "title" : "Monóculo", "price" : 1946, "thumbnail" : "https://desaprobacion.com/monoculos-para-sospechar.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b88"), "title" : "Estufa", "price" : 793, "thumbnail" : "https://primeranecesidad.com/estufas-para-vitoria.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b89"), "title" : "Baraja de cartas", "price" : 307, "thumbnail" : "https://escobeando.com/barajas.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8a"), "title" : "AirPods", "price" : 4937, "thumbnail" : "https://comprateunos.com/te-cambiaran-la-vida.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8b"), "title" : "Amazon Echo", "price" : 3938, "thumbnail" : "https://amazon.com/dropin-siempre.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8c"), "title" : "Diccionario español-suahili", "price" : 832, "thumbnail" : "https://paquequieroesto.com/meexplicas.png" }
+> db.mensajes.find()
+{ "_id" : ObjectId("61f7260946f2d691adf66b8d"), "email" : "mp2205@gmail.com", "message" : "Hola", "date" : "30/01/2022 20:30:00" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b8e"), "email" : "apm1405@gmail.com", "message" : "Holiii", "date" : "30/01/2022 20:30:10" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b8f"), "email" : "mp2205@gmail.com", "message" : "Como estas?", "date" : "30/01/2022 20:31:20" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b90"), "email" : "apm1405@gmail.com", "message" : "Bien y tu?", "date" : "30/01/2022 20:32:15" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b91"), "email" : "mp2205@gmail.com", "message" : "Todo tranqui", "date" : "30/01/2022 20:32:51" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b92"), "email" : "mp2205@gmail.com", "message" : "Que haces?", "date" : "30/01/2022 20:33:08" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b93"), "email" : "apm1405@gmail.com", "message" : "Leer, tu?", "date" : "30/01/2022 20:34:00" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b94"), "email" : "mp2205@gmail.com", "message" : "Acá, haciendo el challenge para Coderhouse y hablando solo", "date" : "30/01/2022 20:34:30" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b95"), "email" : "apm1405@gmail.com", "message" : "Bueno, me tengo que ir", "date" : "30/01/2022 20:35:24" }
+{ "_id" : ObjectId("61f7260946f2d691adf66b96"), "email" : "mp2205@gmail.com", "message" : "Yo también, mas que nada porque este es el último mensaje. Adiós!", "date" : "30/01/2022 20:35:44" }
+> db.productos.estimatedDocumentCount()
+10
+> db.mensajes.estimatedDocumentCount()
+10
+> db.productos.insertOne( {title: "Iphone 11", price: 1200, thumbnail: "http://apple.com/iphone11.png"})
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("61f7289d46f2d691adf66b97")
+}
+> db.productos.find( {title: "Bolígrafo"})
+{ "_id" : ObjectId("61f725f446f2d691adf66b83"), "title" : "Bolígrafo", "price" : 150, "thumbnail" : "https://vic.com/boli.png" }
+> db.productos.find( {price: {$lt: 1000}})
+{ "_id" : ObjectId("61f725f446f2d691adf66b83"), "title" : "Bolígrafo", "price" : 150, "thumbnail" : "https://vic.com/boli.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b84"), "title" : "Compás", "price" : 342, "thumbnail" : "https://pas.com/compas.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b88"), "title" : "Estufa", "price" : 793, "thumbnail" : "https://primeranecesidad.com/estufas-para-vitoria.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b89"), "title" : "Baraja de cartas", "price" : 307, "thumbnail" : "https://escobeando.com/barajas.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8c"), "title" : "Diccionario español-suahili", "price" : 832, "thumbnail" : "https://paquequieroesto.com/meexplicas.png" }
+> db.productos.find( {price: {$gte: 1000,$lte:3000}})
+{ "_id" : ObjectId("61f725f446f2d691adf66b85"), "title" : "Barbie", "price" : 2364, "thumbnail" : "https://barbie.com/fashion.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b87"), "title" : "Monóculo", "price" : 1946, "thumbnail" : "https://desaprobacion.com/monoculos-para-sospechar.png" }
+{ "_id" : ObjectId("61f7289d46f2d691adf66b97"), "title" : "Iphone 11", "price" : 1200, "thumbnail" : "http://apple.com/iphone11.png" }
+> db.productos.find( {price: {$gt:3000}})
+{ "_id" : ObjectId("61f725f446f2d691adf66b86"), "title" : "Reproductor DVD", "price" : 4389, "thumbnail" : "https://tecno.com/dvd.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8a"), "title" : "AirPods", "price" : 4937, "thumbnail" : "https://comprateunos.com/te-cambiaran-la-vida.png" }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8b"), "title" : "Amazon Echo", "price" : 3938, "thumbnail" : "https://amazon.com/dropin-siempre.png" }
+> db.productos.find({}, {"title":1, "_id":0}).skip(2).limit(1).sort({price: 1})
+{ "title" : "Compás" }
+> db.productos.updateMany({stock: {$exists: false}}, {$set: {stock: 100}})
+{ "acknowledged" : true, "matchedCount" : 11, "modifiedCount" : 11 }
+> db.productos.find({}, {"title":1, "stock":1, "_id":0})
+{ "title" : "Bolígrafo", "stock" : 100 }
+{ "title" : "Compás", "stock" : 100 }
+{ "title" : "Barbie", "stock" : 100 }
+{ "title" : "Reproductor DVD", "stock" : 100 }
+{ "title" : "Monóculo", "stock" : 100 }
+{ "title" : "Estufa", "stock" : 100 }
+{ "title" : "Baraja de cartas", "stock" : 100 }
+{ "title" : "AirPods", "stock" : 100 }
+{ "title" : "Amazon Echo", "stock" : 100 }
+{ "title" : "Diccionario español-suahili", "stock" : 100 }
+{ "title" : "Iphone 11", "stock" : 100 }
+> db.productos.updateMany({price: {$gt: 4000}}, {$set: {stock: 0}})
+{ "acknowledged" : true, "matchedCount" : 2, "modifiedCount" : 2 }
+> db.productos.find({}, {"title":1, "stock":1, "_id":0})
+{ "title" : "Bolígrafo", "stock" : 100 }
+{ "title" : "Compás", "stock" : 100 }
+{ "title" : "Barbie", "stock" : 100 }
+{ "title" : "Reproductor DVD", "stock" : 0 }
+{ "title" : "Monóculo", "stock" : 100 }
+{ "title" : "Estufa", "stock" : 100 }
+{ "title" : "Baraja de cartas", "stock" : 100 }
+{ "title" : "AirPods", "stock" : 0 }
+{ "title" : "Amazon Echo", "stock" : 100 }
+{ "title" : "Diccionario español-suahili", "stock" : 100 }
+{ "title" : "Iphone 11", "stock" : 100 }
+> db.productos.deleteMany({price: {$lt: 1000}})
+{ "acknowledged" : true, "deletedCount" : 5 }
+> db.productos.find({}, {"title":1, "stock":1, "price": 1, "_id":0})
+{ "title" : "Barbie", "price" : 2364, "stock" : 100 }
+{ "title" : "Reproductor DVD", "price" : 4389, "stock" : 0 }
+{ "title" : "Monóculo", "price" : 1946, "stock" : 100 }
+{ "title" : "AirPods", "price" : 4937, "stock" : 0 }
+{ "title" : "Amazon Echo", "price" : 3938, "stock" : 100 }
+{ "title" : "Iphone 11", "price" : 1200, "stock" : 100 }
+> use admin
+switched to db admin
+> db.createUser({user: "pepe", pwd: "asd456", roles: [ { role: "read", db: "ecommerce"}]})
+Successfully added user: {
+	"user" : "pepe",
+	"roles" : [
+		{
+			"role" : "read",
+			"db" : "ecommerce"
+		}
+	]
+}
+> exit
+bye
+
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("e4921c95-faa5-4f3e-9076-65a85a7884db") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+> show dbs
+ecommerce  0.000GB
+> use ecommerce
+switched to db ecommerce
+> db.productos.insertOne({ title: "Prueba" })
+uncaught exception: WriteCommandError({
+	"ok" : 0,
+	"errmsg" : "not authorized on ecommerce to execute command { insert: \"productos\", ordered: true, lsid: { id: UUID(\"e4921c95-faa5-4f3e-9076-65a85a7884db\") }, $db: \"ecommerce\" }",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+}) :
+WriteCommandError({
+	"ok" : 0,
+	"errmsg" : "not authorized on ecommerce to execute command { insert: \"productos\", ordered: true, lsid: { id: UUID(\"e4921c95-faa5-4f3e-9076-65a85a7884db\") }, $db: \"ecommerce\" }",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+})
+WriteCommandError@src/mongo/shell/bulk_api.js:421:48
+executeBatch@src/mongo/shell/bulk_api.js:936:23
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1182:21
+DBCollection.prototype.insertOne@src/mongo/shell/crud_api.js:264:9
+@(shell):1:1
+> db.productos.deleteOne({ title: "Prueba" })
+uncaught exception: WriteCommandError({
+	"ok" : 0,
+	"errmsg" : "not authorized on ecommerce to execute command { delete: \"productos\", ordered: true, lsid: { id: UUID(\"e4921c95-faa5-4f3e-9076-65a85a7884db\") }, $db: \"ecommerce\" }",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+}) :
+WriteCommandError({
+	"ok" : 0,
+	"errmsg" : "not authorized on ecommerce to execute command { delete: \"productos\", ordered: true, lsid: { id: UUID(\"e4921c95-faa5-4f3e-9076-65a85a7884db\") }, $db: \"ecommerce\" }",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+})
+WriteCommandError@src/mongo/shell/bulk_api.js:421:48
+executeBatch@src/mongo/shell/bulk_api.js:936:23
+Bulk/this.execute@src/mongo/shell/bulk_api.js:1182:21
+DBCollection.prototype.deleteOne@src/mongo/shell/crud_api.js:375:17
+@(shell):1:1
+> db.productos.find()
+{ "_id" : ObjectId("61f725f446f2d691adf66b85"), "title" : "Barbie", "price" : 2364, "thumbnail" : "https://barbie.com/fashion.png", "stock" : 100 }
+{ "_id" : ObjectId("61f725f446f2d691adf66b86"), "title" : "Reproductor DVD", "price" : 4389, "thumbnail" : "https://tecno.com/dvd.png", "stock" : 0 }
+{ "_id" : ObjectId("61f725f446f2d691adf66b87"), "title" : "Monóculo", "price" : 1946, "thumbnail" : "https://desaprobacion.com/monoculos-para-sospechar.png", "stock" : 100 }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8a"), "title" : "AirPods", "price" : 4937, "thumbnail" : "https://comprateunos.com/te-cambiaran-la-vida.png", "stock" : 0 }
+{ "_id" : ObjectId("61f725f446f2d691adf66b8b"), "title" : "Amazon Echo", "price" : 3938, "thumbnail" : "https://amazon.com/dropin-siempre.png", "stock" : 100 }
+{ "_id" : ObjectId("61f7289d46f2d691adf66b97"), "title" : "Iphone 11", "price" : 1200, "thumbnail" : "http://apple.com/iphone11.png", "stock" : 100 }
+> exit
+bye
