@@ -1,47 +1,20 @@
 const express = require("express");
 const app = express();
+const middlewares = require("./controllers/middlewares");
 const PORT = process.env.PORT || 8080;
-admin = true;
 
-const apiProductos = require('./controllers/productos')
-const apiCarritos = require('./controllers/carritos')
+const apiProductos = require('./routes/productos')
+const apiCarritos = require('./routes/carritos')
 
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.post('/api/productos', (req, res, next) => {
-  if (!admin) {
-    res.status(403).json({error: 403, descripcion: `ruta ${req.url} método ${req.method} no autorizado`});
-  } else {
-    next();
-  }
-});
-app.put('/api/productos/:id', (req, res, next) => {
-  if (!admin) {
-    res.status(403).json({error: 403, descripcion: `ruta ${req.url} método ${req.method} no autorizado`});
-  } else {
-    next();
-  }
-});
-app.delete('/api/productos/:id', (req, res, next) => {
-  if (!admin) {
-    res.status(403).json({error: 403, descripcion: `ruta ${req.url} método ${req.method} no autorizado`});
-  } else {
-    next();
-  }
-});
-
 app.use('/api/productos', apiProductos);
 app.use('/api/carrito', apiCarritos);
 
-app.use((error, req, res, next) => {
-  console.log(error);
-  res.status(400).json({"error": 400, "descripcion": error.message});
-});
-app.use((req, res, next) => {
-  res.status(404).json({error: 404, descripcion: `Ruta ${req.url} método ${req.method} no implementados`});
-});
+app.use(middlewares.errorHandler);
+app.use(middlewares.notFound);
 
 const server = app.listen(PORT, () => {
   console.log(`Servidor Express escuchando peticiones en el puerto ${server.address().port}`);
