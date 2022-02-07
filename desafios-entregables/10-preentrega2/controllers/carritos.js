@@ -1,12 +1,12 @@
-const Carritos = require("../models/carritos");
-const Productos = require("../models/productos");
+const Carritos = require("../daos/carritos");
+const Productos = require("../daos/productos");
 let carritos = new Carritos("./models/carritos.txt");
-let productos = new Productos("./models/productos.txt");
+let productos = new Productos();
 
 const getProductsFromCart = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const productsOfCart = await carritos.getProductsFromCart(+id).then((res) => res);
+    const productsOfCart = await carritos.getProductsFromCart(id).then((res) => res);
     if (!productsOfCart) {
       throw new Error('Ese carrito no existe o no tiene productos');
     }
@@ -23,9 +23,9 @@ const postCart = async (req, res, next) => {
     if (!producto) {
       throw new Error('No se puede crear el carrito porque el producto no existe');
     }
-    const carrito = {productos: [producto]};
+    const carrito = {productos: producto._id};
     const cart = await carritos.createCart(carrito).then((res) => res);
-    res.json(cart.id);
+    res.json(cart);
   } catch (error) {
     next(error);
   }
@@ -39,7 +39,7 @@ const addProductToCart = async (req, res, next) => {
     if (!producto) {
       throw new Error('Producto no encontrado');
     }
-    const cart = await carritos.addProductToCart(+id, producto).then((res) => res);
+    const cart = await carritos.addProductToCart(id, producto._id).then((res) => res);
     if (!cart) {
       throw new Error('Ese carrito no existe');
     }
@@ -51,8 +51,8 @@ const addProductToCart = async (req, res, next) => {
 
 const deleteProductFromCart = async (req, res, next) => {
   try {
-    const id_product = +req.params.id_prod;
-    const id = +req.params.id;
+    const id_product = req.params.id_prod;
+    const id = req.params.id;
     const producto = await productos.getProductById(id_product).then((res) => res);
     if (!producto) {
       throw new Error('Producto no encontrado');
@@ -69,7 +69,7 @@ const deleteProductFromCart = async (req, res, next) => {
 
 const deleteCart = async (req, res, next) => {
   try {
-    const id = +req.params.id;
+    const id = req.params.id;
     const cart = await carritos.deleteCartById(id).then((res) => res);
     if (!cart) {
       throw new Error('Carrito no encontrado');

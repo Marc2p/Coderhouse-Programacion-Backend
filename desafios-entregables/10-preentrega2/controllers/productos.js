@@ -1,12 +1,5 @@
-const mongoose = require("mongoose");
-const productos = require("../daos/daos-productos")
-// const Productos = require("../models/productos");
-// let productos = new Productos("./models/productos.txt");
-mongoose.connect('mongodb://AdmEcomm:AdmEcomm22@localhost:27017/ecommerce?authSource=admin&w=1').then(() => {
-  console.log('Conexión a la base de datos establecida')
-}).catch((err) => {
-  console.log(err);
-})
+const Productos = require("../daos/productos");
+let productos = new Productos();
 
 const getProductos = async (req, res, next) => {
   try {

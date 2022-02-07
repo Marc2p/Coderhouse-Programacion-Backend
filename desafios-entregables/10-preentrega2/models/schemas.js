@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const productSchema = mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
   title: {
@@ -29,8 +30,23 @@ const productSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   }
-})
+});
 
-const products = mongoose.model('productos', productSchema);
+const cartSchema = mongoose.Schema({
+  _id: mongoose.Schema.Types.ObjectId,
+  timestamp: {
+    type: Date,
+    default: Date.now
+  },
+  productos: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Productos'
+    }
+  ]
+});
 
-module.exports = {products};
+const Productos = mongoose.model('Productos', productSchema);
+const Carritos = mongoose.model('Carritos', cartSchema);
+
+module.exports = {Productos, Carritos};

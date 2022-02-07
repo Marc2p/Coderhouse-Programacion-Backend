@@ -1,10 +1,12 @@
+const dotenv = require('dotenv').config();
 const express = require("express");
 const app = express();
-const middlewares = require("./controllers/middlewares");
+require("./mongodb/mongooseLoader");
 const PORT = process.env.PORT || 8080;
+const middlewares = require("./controllers/middlewares");
 
-const apiProductos = require('./routes/productos')
-const apiCarritos = require('./routes/carritos')
+const apiProductos = require('./routes/productos');
+const apiCarritos = require('./routes/carritos');
 
 app.use(express.static('./public'));
 app.use(express.json());
