@@ -1,0 +1,23 @@
+{
+  "name": "06-websockets",
+  "version": "1.0.0",
+  "description": "Desafio 6, websockets",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Marcos Peirone",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.6",
+    "better-sqlite3": "^7.5.0",
+    "dotenv": "^14.2.0",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "knex": "^1.0.3",
+    "mysql": "^2.18.1",
+    "normalizr": "^3.6.1",
+    "socket.io": "^4.4.1"
+  }
+}
