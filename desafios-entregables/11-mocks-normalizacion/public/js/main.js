@@ -1,4 +1,11 @@
-const {normalizar, print, denormalizar} = require('../utils/normalizar');
+const author = new normalizr.schema.Entity('author');
+const text = new normalizr.schema.Entity('text', {
+  author: author
+});
+const denormalizar = (obj) => {
+  return normalizr.denormalize(obj.result, text, obj.entities)
+}
+
 let socket = io.connect();
 
 socket.on("productos", (data) => {
@@ -23,8 +30,8 @@ function render(data) {
 }
 
 function renderMessages(data) {
-  const denormalizedMessages = denormalizar(normalizedMessages);
-  let html = denormalizedMessages
+  const denormalizedMessages = denormalizar(data);
+  let html = denormalizedMessages.messages
     .map((elem, index) => {
       return `<div>
         <span style="color: blue; font-weight: bold;">${elem.author.nombre}</span>
