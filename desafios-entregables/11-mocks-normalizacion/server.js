@@ -1,5 +1,4 @@
-const { normalize, schema } = require('normalizr');
-const util = require('util')
+const {normalizar, print, denormalizar} = require('./utils/normalizar');
 const ApiProductosMock = require("./api/productos");
 const apiProductos = new ApiProductosMock()
 const Chat = require("./contenedores/chat");
@@ -9,15 +8,6 @@ const { Socket } = require("socket.io");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-
-const author = new schema.Entity('author');
-const text = new schema.Entity('text', {
-  author: author
-});
-const print = (obj) => {
-  console.log(util.inspect(obj, false, 12, true))
-}
-
 const { Router } = express;
 const apiRouter = Router();
 
@@ -43,12 +33,14 @@ io.on("connection", async (socket) => {
 
   const arrayDeProductos = await apiProductos.getAll()
   const messages = await chat.getMessages().then((res) => res);
-  const normalizedMessages = normalize(messages, text);
+  const normalizedMessages = normalizar(messages);
   console.log(normalizedMessages);
   print(normalizedMessages)
+  const denormalizedMessages = denormalizar(normalizedMessages);
+  print(denormalizedMessages)
 
   socket.emit("productos", arrayDeProductos);
-  socket.emit("messages", messages);
+  socket.emit("messages", normalizedMessages);
 
   socket.on("new-product", async (data) => {
     await productos.save(data).then((resolve) => resolve);
@@ -60,7 +52,8 @@ io.on("connection", async (socket) => {
   socket.on("new-message", async (data) => {
     await chat.saveMessages(data).then((resolve) => resolve);
     const messages = await chat.getMessages().then((resolve) => resolve);
-    io.sockets.emit("messages", messages);
+    const normalizedMessages = normalizar(messages);
+    io.sockets.emit("messages", normalizedMessages);
   });
 });
 

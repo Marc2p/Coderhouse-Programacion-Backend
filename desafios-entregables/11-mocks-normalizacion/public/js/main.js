@@ -1,3 +1,4 @@
+const {normalizar, print, denormalizar} = require('../utils/normalizar');
 let socket = io.connect();
 
 socket.on("productos", (data) => {
@@ -22,7 +23,8 @@ function render(data) {
 }
 
 function renderMessages(data) {
-  let html = data
+  const denormalizedMessages = denormalizar(normalizedMessages);
+  let html = denormalizedMessages
     .map((elem, index) => {
       return `<div>
         <span style="color: blue; font-weight: bold;">${elem.author.nombre}</span>
