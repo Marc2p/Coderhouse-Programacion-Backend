@@ -98,13 +98,17 @@ apiRouter.get("/productos/:id", async (req, res, next) => {
 
 apiRouter.get("/logout", async (req, res, next) => {
   if(req.session.user) {
+    const session = req.session.user;
     req.session.destroy(err => {
       if(err){
         console.log(err);
       } else {
-        res.json('Hasta luego')
+        res.json(`Hasta luego ${session}`)
       }
     })
+    setTimeout(() => {
+      res.redirect('/api');
+    }, 2000)
   }
 })
 
