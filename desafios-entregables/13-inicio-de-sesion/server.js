@@ -45,19 +45,29 @@ apiRouter.use(
     }),
   })
 );
+const flash = require('connect-flash');
+apiRouter.use(flash());
+
+function isValidPassword(user, password) {
+  console.log (user, password)
+  return bCrypt.compareSync(password, user.password);
+}
+function createHash(password) {
+  return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
+}
 
 passport.use(
   "login",
-  new LocalStrategy((username, password, done) => {
+  new LocalStrategy( {passReqToCallback : true}, (req, username, password, done) => {
     User.findOne({ username }, (err, user) => {
       if (err) return done(err);
       if (!user) {
         console.log("User Not Found with email " + username);
-        return done(null, false);
+        return done(null, false, req.flash('message', 'Usuario no encontrado.'));
       }
-      if (!isValidPassword(username, password)) {
+      if (!isValidPassword(user, password)) {
         console.log("Invalid Password");
-        return done(null, false);
+        return done(null, false, req.flash('message', 'Contraseña incorrecta'));
       }
       return done(null, user);
     });
@@ -71,8 +81,8 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, usern
       return done(err);
     }
     if (user) {
-      console.log('User already exists with username: ' + email);
-      return done(null, false, req.flash('message','User Already Exists'));
+      console.log('User already exists with username: ' + username);
+      return done(null, false, req.flash('message','El usuario ya se encuentra registrado'));
     } else {
       const newUser = new User();
       newUser.username = username;
@@ -88,13 +98,6 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, usern
     }
   });
 }));
-
-function isValidPassword(user, password) {
-  return bCrypt.compareSync(password, user.password);
-}
-function createHash(password) {
-  return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
-}
 
 passport.serializeUser((user, done) => {
   done(null, user._id);
@@ -138,7 +141,7 @@ io.on("connection", async (socket) => {
 
 apiRouter.get("/", async (req, res, next) => {
   if (req.isAuthenticated()) {
-    res.render("form-new-product", { user: req.user.email });
+    res.render("form-new-product", { user: req.user.username });
   }
   else {
     res.render("form-new-product");
@@ -186,11 +189,22 @@ apiRouter.get("/logout", async (req, res, next) => {
     }, 2000);
   }
 });
+
 apiRouter.get('/signin', (req, res) => {
   res.render("signin");
 })
 apiRouter.get('/signup', (req, res) => {
   res.render("signup");
+})
+apiRouter.get("/logoff", (req, res) => {
+  req.logOut();
+  res.redirect('/api');
+})
+apiRouter.get('/errorlogin', (req, res) => {
+  res.render('errorlogin', {message: req.flash('message')})
+})
+apiRouter.get('/errorsignup', (req, res) => {
+  res.render('errorsignup', {message: req.flash('message')})
 })
 
 apiRouter.post("/login", async (req, res, next) => {
@@ -211,7 +225,10 @@ apiRouter.post("/login", async (req, res, next) => {
   }
 });
 
-apiRouter.post('/signin', passport.authenticate('login', { successRedirect: '/api', failureRedirect: '/api/errorlogin'}));
+apiRouter.post('/signin', passport.authenticate('login', { failureRedirect: '/api/errorlogin'}), (req, res) => {
+  req.session.username = req.body.username;
+  res.redirect('/api')
+});
 apiRouter.post('/signup', passport.authenticate('signup', { successRedirect: '/api', failureRedirect: '/api/errorsignup'}));
 
 apiRouter.post("/productos", async (req, res, next) => {
