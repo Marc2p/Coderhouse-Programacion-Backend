@@ -1,6 +1,6 @@
 require("./mongodb/mongooseLoader");
 const User = require('./models/user');
-const bcrypt = require ('bcrypt');
+const bCrypt = require ('bcrypt');
 const { normalizar, print, denormalizar } = require("./utils/normalizar");
 const ApiProductosMock = require("./api/productos");
 const apiProductos = new ApiProductosMock();
@@ -48,14 +48,14 @@ apiRouter.use(
 
 passport.use(
   "login",
-  new LocalStrategy((email, password, done) => {
-    User.findOne({ email }, (err, user) => {
+  new LocalStrategy((username, password, done) => {
+    User.findOne({ username }, (err, user) => {
       if (err) return done(err);
       if (!user) {
-        console.log("User Not Found with email " + email);
+        console.log("User Not Found with email " + username);
         return done(null, false);
       }
-      if (!isValidPassword(email, password)) {
+      if (!isValidPassword(username, password)) {
         console.log("Invalid Password");
         return done(null, false);
       }
@@ -64,8 +64,8 @@ passport.use(
   })
 );
 
-passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, email, password, done) => {
-  User.findOne({ 'email' : email }, (err, user) => {
+passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, username, password, done) => {
+  User.findOne({ 'username' : username }, (err, user) => {
     if (err){
       console.log('Error in SignUp: '+err);
       return done(err);
@@ -75,7 +75,7 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, email
       return done(null, false, req.flash('message','User Already Exists'));
     } else {
       const newUser = new User();
-      newUser.email = email;
+      newUser.username = username;
       newUser.password = createHash(password);
       newUser.save((err) => {
         if (err){
@@ -88,8 +88,6 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, email
     }
   });
 }));
-
-
 
 function isValidPassword(user, password) {
   return bCrypt.compareSync(password, user.password);
@@ -142,7 +140,9 @@ apiRouter.get("/", async (req, res, next) => {
   if (req.isAuthenticated()) {
     res.render("form-new-product", { user: req.user.email });
   }
-  res.render("form-new-product");
+  else {
+    res.render("form-new-product");
+  }
 });
 
 apiRouter.get("/productos-test", async (req, res, next) => {
