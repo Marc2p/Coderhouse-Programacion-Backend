@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connection = mongoose.connect('mongodb://AdmEcomm:AdmEcomm22@localhost:27017/ecommerce?authSource=admin&w=1', {
+const connection = mongoose.connect('mongodb+srv://dataecomm:df6D2JPbbF7cdTYX@coderhouse-backend.eu9jd.mongodb.net/ecommerce?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
