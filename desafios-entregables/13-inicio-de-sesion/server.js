@@ -39,7 +39,7 @@ apiRouter.use(
     saveUninitialized: true,
     store: MongoStore.create({
       mongoUrl:
-        "mongodb+srv://dataecomm:4Lrgc3x2TLnxjPOM@coderhouse-backend.eu9jd.mongodb.net/ecommerce?retryWrites=true&w=majority",
+        "mongodb+srv://dataecomm:df6D2JPbbF7cdTYX@coderhouse-backend.eu9jd.mongodb.net/ecommerce?retryWrites=true&w=majority",
       ttl: 600000,
       autoRemove: "native",
     }),
