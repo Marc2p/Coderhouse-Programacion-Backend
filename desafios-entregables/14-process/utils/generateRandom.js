@@ -1,7 +1,8 @@
 const randomNumber = (cant) => {
+  let cantidad = +cant;
   let numbers =[];
-  for (let i = 0; i < cant; i++) {
-    let random = Math.floor((Math.random() * 999) + 1);
+  for (let i = 0; i < cantidad; i++) {
+    let random = Math.floor((Math.random() * 1000) +1);
     numbers.push(random);
   }
   let repetidos = {};
@@ -11,9 +12,8 @@ const randomNumber = (cant) => {
   return repetidos;
 }
 
-process.on('message', (msg) => {
-  console.log(`cantidad: ${msg}`);
-  const generar = randomNumber(msg);
-  process.send(JSON.stringify(generar));
-  process.exit();
+process.on('message', (cant) => {
+  console.log(`cantidad: ${cant}`);
+  const generar = randomNumber(cant);
+  process.send({res: generar});
 });

@@ -153,15 +153,10 @@ app.get("/info", (req, res) => {
 })
 app.get("/random/:cant?", (req, res) => {
   const forked = fork('./utils/generateRandom.js');
-  forked.on('message', generar => {
-    if(!req.query.cant){
-      let cant = 100000000;
-      forked.send(cant)
-    }else{
-      let cant = req.query.cant
-      forked.send(cant)
-    }
-  res.end(msg);
+  let cant = +req.params.cant || 100000000;
+  forked.send(cant);
+  forked.on('message', (numeros) => {
+    res.send(numeros.res);
   })
 })
 
