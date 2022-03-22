@@ -1,0 +1,1065 @@
+Statistical profiling result from isolate-0x4908f60-11622-v8.log, (10119 ticks, 2 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   6787   67.1%          /usr/local/bin/node
+    202    2.0%          /usr/lib/x86_64-linux-gnu/libc-2.31.so
+     36    0.4%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+      9    0.1%          [vdso]
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     40    0.4%    1.3%  LazyCompile: *resolve node:path:1091:10
+     10    0.1%    0.3%  LazyCompile: *normalizeString node:path:66:25
+      8    0.1%    0.3%  LazyCompile: *nextTick node:internal/process/task_queues:104:18
+      6    0.1%    0.2%  LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      5    0.0%    0.2%  LazyCompile: *validateString node:internal/validators:117:24
+      5    0.0%    0.2%  LazyCompile: *Module._nodeModulePaths node:internal/modules/cjs/loader:629:37
+      4    0.0%    0.1%  LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      4    0.0%    0.1%  LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      4    0.0%    0.1%  Function: ^afterWriteDispatched node:internal/stream_base_commons:159:30
+      4    0.0%    0.1%  Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      3    0.0%    0.1%  LazyCompile: *handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+      3    0.0%    0.1%  Function: ^emit node:events:340:44
+      3    0.0%    0.1%  Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2    0.0%    0.1%  RegExp: ^[!#$%&'*+.^_`|~0-9A-Za-z-]+$
+      2    0.0%    0.1%  LazyCompile: *realpathSync node:fs:2408:22
+      2    0.0%    0.1%  LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      2    0.0%    0.1%  LazyCompile: *basename node:path:1306:11
+      2    0.0%    0.1%  LazyCompile: *Module._resolveLookupPaths node:internal/modules/cjs/loader:667:38
+      2    0.0%    0.1%  Function: ^value node:internal/console/constructor:320:20
+      2    0.0%    0.1%  Function: ^slice node:buffer:593:12
+      2    0.0%    0.1%  Function: ^processPromiseRejections node:internal/process/promises:203:34
+      2    0.0%    0.1%  Function: ^onResponseHeaders /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:140:47
+      2    0.0%    0.1%  Function: ^next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:732:17
+      2    0.0%    0.1%  Function: ^next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      2    0.0%    0.1%  Function: ^compression /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:59:31
+      2    0.0%    0.1%  Function: ^compileFunction node:vm:308:25
+      2    0.0%    0.1%  Function: ^checkIsHttpToken node:_http_common:221:26
+      2    0.0%    0.1%  Function: ^_flushOutput node:_http_outgoing:950:63
+      2    0.0%    0.1%  Function: ^<anonymous> node:internal/validators:83:3
+      1    0.0%    0.0%  RegExp: y{1,4}
+      1    0.0%    0.0%  RegExp: ^xterm-256
+      1    0.0%    0.0%  RegExp: ^\s*([^;\s]*)(?:;|\s|$)
+      1    0.0%    0.0%  RegExp: ^\/api\/?(?=\/|$)
+      1    0.0%    0.0%  RegExp: ^[\^_`a-zA-Z\-0-9!#$%&'*+.|~]+$
+      1    0.0%    0.0%  RegExp: ^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$
+      1    0.0%    0.0%  RegExp: (?:^|\/)\.?\.$
+      1    0.0%    0.0%  RegExp: (?:^|[\\/])\.\.(?:[\\/]|$)
+      1    0.0%    0.0%  LazyCompile: *stat node:internal/modules/cjs/loader:151:14
+      1    0.0%    0.0%  LazyCompile: *matchKnownFields node:_http_incoming:231:26
+      1    0.0%    0.0%  LazyCompile: *getHeader node:_http_outgoing:590:57
+      1    0.0%    0.0%  LazyCompile: *fastparse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/parseurl/index.js:95:20
+      1    0.0%    0.0%  LazyCompile: *compileFunction node:vm:308:25
+      1    0.0%    0.0%  LazyCompile: *append /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/vary/index.js:38:17
+      1    0.0%    0.0%  LazyCompile: *_storeHeader node:_http_outgoing:374:22
+      1    0.0%    0.0%  LazyCompile: *_addListener node:events:418:22
+      1    0.0%    0.0%  LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    0.0%    0.0%  LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    0.0%    0.0%  Function: ^writeHead node:_http_server:269:19
+      1    0.0%    0.0%  Function: ^validateString node:internal/validators:117:24
+      1    0.0%    0.0%  Function: ^updateOutgoingData node:_http_server:553:28
+      1    0.0%    0.0%  Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1    0.0%    0.0%  Function: ^socketListenerWrap node:_http_server:1001:37
+      1    0.0%    0.0%  Function: ^setHeader node:_http_outgoing:574:57
+      1    0.0%    0.0%  Function: ^resOnFinish node:_http_server:788:21
+      1    0.0%    0.0%  Function: ^readSync node:fs:684:18
+      1    0.0%    0.0%  Function: ^readStart node:_http_incoming:40:19
+      1    0.0%    0.0%  Function: ^process.cwd /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/graceful-fs/polyfills.js:8:23
+      1    0.0%    0.0%  Function: ^parseurl /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/parseurl/index.js:35:19
+      1    0.0%    0.0%  Function: ^parserOnIncoming node:_http_server:852:26
+      1    0.0%    0.0%  Function: ^onFinish node:_http_outgoing:828:18
+      1    0.0%    0.0%  Function: ^nocompress /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:134:25
+      1    0.0%    0.0%  Function: ^nextTick node:internal/process/task_queues:104:18
+      1    0.0%    0.0%  Function: ^memoryUsage node:internal/process/per_thread:165:23
+      1    0.0%    0.0%  Function: ^matchKnownFields node:_http_incoming:231:26
+      1    0.0%    0.0%  Function: ^makeStatsCallback node:fs:194:27
+      1    0.0%    0.0%  Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      1    0.0%    0.0%  Function: ^listenerCount node:events:722:23
+      1    0.0%    0.0%  Function: ^json /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:239:25
+      1    0.0%    0.0%  Function: ^isstats /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/etag/index.js:104:18
+      1    0.0%    0.0%  Function: ^header /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:759:29
+      1    0.0%    0.0%  Function: ^hasTrailingSlash /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:303:67
+      1    0.0%    0.0%  Function: ^getValidatedString /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/bson/lib/parser/deserializer.js:641:28
+      1    0.0%    0.0%  Function: ^getHighWaterMark node:internal/streams/state:19:26
+      1    0.0%    0.0%  Function: ^getEncodingOps node:buffer:678:24
+      1    0.0%    0.0%  Function: ^get node:internal/bootstrap/pre_execution:315:8
+      1    0.0%    0.0%  Function: ^fresh /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/parseurl/index.js:153:16
+      1    0.0%    0.0%  Function: ^format /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/content-type/index.js:65:17
+      1    0.0%    0.0%  Function: ^end node:_http_outgoing:833:45
+      1    0.0%    0.0%  Function: ^dispatch /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:98:45
+      1    0.0%    0.0%  Function: ^configForCategory /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/categories.js:171:27
+      1    0.0%    0.0%  Function: ^compressible /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compressible/index.js:41:23
+      1    0.0%    0.0%  Function: ^assertEncoding node:internal/fs/utils:151:24
+      1    0.0%    0.0%  Function: ^addZero /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/date-format/lib/index.js:11:17
+      1    0.0%    0.0%  Function: ^_write node:internal/streams/writable:283:16
+      1    0.0%    0.0%  Function: ^_addListener node:events:418:22
+      1    0.0%    0.0%  Function: ^_ /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/vendor/mersenne.js:1:736
+      1    0.0%    0.0%  Function: ^Writable.write node:internal/streams/writable:333:36
+      1    0.0%    0.0%  Function: ^Timestamp /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/bson/lib/timestamp.js:26:23
+      1    0.0%    0.0%  Function: ^SendStream /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:96:21
+      1    0.0%    0.0%  Function: ^ReadableState node:internal/streams/readable:78:23
+      1    0.0%    0.0%  Function: ^Readable.read node:internal/streams/readable:394:35
+      1    0.0%    0.0%  Function: ^Readable node:internal/streams/readable:181:18
+      1    0.0%    0.0%  Function: ^Pager.set /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/memory-pager/index.js:81:32
+      1    0.0%    0.0%  Function: ^FastBuffer node:internal/buffer:958:14
+      1    0.0%    0.0%  Function: ^<anonymous> node:fs:197:10
+      1    0.0%    0.0%  Function: ^<anonymous> node:buffer:348:36
+      1    0.0%    0.0%  Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/log4js.js:42:29
+      1    0.0%    0.0%  Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/engine.io/build/server.js:479:30
+
+ [C++]:
+   ticks  total  nonlib   name
+   1978   19.5%   64.1%  __write
+    120    1.2%    3.9%  epoll_pwait
+    118    1.2%    3.8%  fwrite
+    111    1.1%    3.6%  __lll_lock_wait
+     82    0.8%    2.7%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+     53    0.5%    1.7%  syscall
+     50    0.5%    1.6%  __libc_malloc
+     48    0.5%    1.6%  _IO_file_xsputn
+     47    0.5%    1.5%  std::ostream::sentry::sentry(std::ostream&)
+     40    0.4%    1.3%  __pthread_cond_wait
+     35    0.3%    1.1%  __GI___pthread_mutex_unlock
+     25    0.2%    0.8%  __libc_read
+     16    0.2%    0.5%  __mprotect
+     12    0.1%    0.4%  std::ostream& std::ostream::_M_insert<long>(long)
+     11    0.1%    0.4%  cfree
+     10    0.1%    0.3%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+     10    0.1%    0.3%  operator new(unsigned long)
+      9    0.1%    0.3%  __pthread_cond_signal
+      9    0.1%    0.3%  __libc_open
+      8    0.1%    0.3%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      7    0.1%    0.2%  std::ostream::operator<<(int)
+      7    0.1%    0.2%  std::locale::id::_M_id() const
+      6    0.1%    0.2%  _IO_setb
+      6    0.1%    0.2%  _IO_file_sync
+      5    0.0%    0.2%  operator delete(void*)
+      5    0.0%    0.2%  __mmap
+      5    0.0%    0.2%  __libc_write
+      5    0.0%    0.2%  __GI___pthread_mutex_lock
+      4    0.0%    0.1%  std::ostream::put(char)
+      4    0.0%    0.1%  operator new[](unsigned long)
+      4    0.0%    0.1%  fflush
+      3    0.0%    0.1%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+      3    0.0%    0.1%  __clock_gettime
+      3    0.0%    0.1%  __GI___pthread_rwlock_wrlock
+      3    0.0%    0.1%  _IO_do_write
+      2    0.0%    0.1%  std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+      2    0.0%    0.1%  _IO_file_write
+      1    0.0%    0.0%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<unsigned long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const
+      1    0.0%    0.0%  std::ostream::flush()
+      1    0.0%    0.0%  std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)
+      1    0.0%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      1    0.0%    0.0%  std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+      1    0.0%    0.0%  shutdown
+      1    0.0%    0.0%  getrusage
+      1    0.0%    0.0%  fputc
+      1    0.0%    0.0%  epoll_ctl
+      1    0.0%    0.0%  brk
+      1    0.0%    0.0%  __vsnprintf
+      1    0.0%    0.0%  __munmap
+      1    0.0%    0.0%  __errno_location
+      1    0.0%    0.0%  __GI___pthread_rwlock_unlock
+      1    0.0%    0.0%  __GI___pthread_getspecific
+
+ [Summary]:
+   ticks  total  nonlib   name
+    200    2.0%    6.5%  JavaScript
+   2883   28.5%   93.5%  C++
+    534    5.3%   17.3%  GC
+   7034   69.5%          Shared libraries
+      2    0.0%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+   1898   76.4%   18.8%  __write
+    115    4.6%    1.1%  fwrite
+     80    3.2%    0.8%  std::basic_ostream<char, std::char_traits<char> >& std::__ostream_insert<char, std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*, long)
+     53    2.1%    0.5%  syscall
+     50    2.0%    0.5%  __libc_malloc
+     47    1.9%    0.5%  _IO_file_xsputn
+     46    1.9%    0.5%  std::ostream::sentry::sentry(std::ostream&)
+     41    1.6%    0.4%  __lll_lock_wait
+     18    0.7%    0.2%  __GI___pthread_mutex_unlock
+     12    0.5%    0.1%  std::ostream& std::ostream::_M_insert<long>(long)
+     11    0.4%    0.1%  cfree
+     10    0.4%    0.1%  __mprotect
+      9    0.4%    0.1%  std::ostreambuf_iterator<char, std::char_traits<char> > std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::_M_insert_int<long>(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      9    0.4%    0.1%  operator new(unsigned long)
+      9    0.4%    0.1%  __libc_open
+      7    0.3%    0.1%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, long) const
+      7    0.3%    0.1%  std::locale::id::_M_id() const
+      6    0.2%    0.1%  std::ostream::operator<<(int)
+      6    0.2%    0.1%  _IO_setb
+      6    0.2%    0.1%  _IO_file_sync
+      5    0.2%    0.0%  operator delete(void*)
+      4    0.2%    0.0%  operator new[](unsigned long)
+      3    0.1%    0.0%  std::ostream::put(char)
+      3    0.1%    0.0%  std::_Rb_tree_insert_and_rebalance(bool, std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::_Rb_tree_node_base&)
+      3    0.1%    0.0%  fflush
+      3    0.1%    0.0%  __clock_gettime
+      3    0.1%    0.0%  __GI___pthread_mutex_lock
+      3    0.1%    0.0%  _IO_do_write
+      2    0.1%    0.0%  std::_Rb_tree_increment(std::_Rb_tree_node_base*)
+      2    0.1%    0.0%  __libc_read
+      2    0.1%    0.0%  __GI___pthread_rwlock_wrlock
+      2    0.1%    0.0%  _IO_file_write
+      1    0.0%    0.0%  std::ostream::flush()
+      1    0.0%    0.0%  std::ostream& std::ostream::_M_insert<unsigned long>(unsigned long)
+      1    0.0%    0.0%  std::num_put<char, std::ostreambuf_iterator<char, std::char_traits<char> > >::do_put(std::ostreambuf_iterator<char, std::char_traits<char> >, std::ios_base&, char, unsigned long) const
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_next_bkt(unsigned long) const
+      1    0.0%    0.0%  std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned long, unsigned long, unsigned long) const
+      1    0.0%    0.0%  std::__detail::_List_node_base::_M_hook(std::__detail::_List_node_base*)
+      1    0.0%    0.0%  fputc
+      1    0.0%    0.0%  __vsnprintf
+      1    0.0%    0.0%  __pthread_cond_signal
+      1    0.0%    0.0%  __GI___pthread_rwlock_unlock
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   6787   67.1%  /usr/local/bin/node
+   4709   69.4%    /usr/local/bin/node
+   1852   39.3%      Function: ^compileFunction node:vm:308:25
+   1459   78.8%        Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+   1428   97.9%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+   1406   98.5%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     22    1.5%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     31    2.1%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+     31  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+    374   20.2%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+    374  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+    270   72.2%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+    104   27.8%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     19    1.0%        LazyCompile: ~wrapSafe node:internal/modules/cjs/loader:1017:18
+     19  100.0%          LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+     19  100.0%            LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+    219    4.7%      Function: ^memoryUsage node:internal/process/per_thread:165:23
+    219  100.0%        Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/server.js:166:33
+    130   59.4%          LazyCompile: *handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+     78   60.0%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+     52   40.0%            Function: ^next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+     89   40.6%          Function: ^handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+     48   53.9%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+     41   46.1%            Function: ^next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+    138    2.9%      /usr/local/bin/node
+     11    8.0%        Function: ^checkInvalidHeaderChar node:_http_common:232:32
+     11  100.0%          Function: ^<anonymous> node:_http_outgoing:564:45
+     11  100.0%            Function: ^setHeader node:_http_outgoing:574:57
+     10    7.2%        Function: ^header /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:759:29
+      5   50.0%          Function: ^send /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:107:25
+      5  100.0%            Function: ^json /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:239:25
+      5   50.0%          Function: ^json /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:239:25
+      5  100.0%            Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/server.js:166:33
+      8    5.8%        Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      8  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      8  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7    5.1%        Function: ^asString /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/date-format/lib/index.js:29:18
+      7  100.0%          Function: ^timestampLevelAndCategory /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:41:35
+      7  100.0%            Function: ^colouredLayout /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:70:24
+      6    4.3%        Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      6  100.0%          Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      4   66.7%            Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      2   33.3%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      4    2.9%        Function: ^pipe /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:510:43
+      4  100.0%          Function: ^serveStatic /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/serve-static/index.js:72:31
+      3   75.0%            Function: ^handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+      1   25.0%            LazyCompile: *handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+      4    2.9%        Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      4  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      4    2.9%        Function: ^Module node:internal/modules/cjs/loader:172:16
+      4  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      4  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      3    2.2%        LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      3  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      3  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+      3    2.2%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2   66.7%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   33.3%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      3    2.2%        Function: ^stat node:internal/modules/cjs/loader:151:14
+      3  100.0%          Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3    2.2%        Function: ^parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/content-type/index.js:106:16
+      3  100.0%          Function: ^setCharset /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/utils.js:246:41
+      3  100.0%            Function: ^send /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:107:25
+      3    2.2%        Function: ^compileFunction node:vm:308:25
+      3  100.0%          Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      3  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      3    2.2%        Function: ^FastBuffer node:internal/buffer:958:14
+      3  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      2   66.7%            Function: ^createPool node:buffer:150:20
+      1   33.3%            Function: ^allocate node:buffer:397:18
+      2    1.4%        LazyCompile: *compileFunction node:vm:308:25
+      2  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      2    1.4%        Function: ^resolve node:path:1091:10
+      2  100.0%          Function: ^readPackage node:internal/modules/cjs/loader:290:21
+      2  100.0%            Function: ^readPackageScope node:internal/modules/cjs/loader:321:26
+      2    1.4%        Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%          Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2  100.0%            Function: ^require node:internal/modules/cjs/helpers:101:31
+     98    2.1%      Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     78   79.6%        Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+     14   17.9%          Function: ~<anonymous> node:crypto:1:1
+     14  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      9   11.5%          Function: ~<anonymous> node:http:1:1
+      9  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6    7.7%          Function: ~<anonymous> node:tty:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      6    7.7%          Function: ~<anonymous> node:tls:1:1
+      6  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      4    5.1%          LazyCompile: ~lazyRequire node:internal/crypto/util:67:21
+      4  100.0%            LazyCompile: ~get node:crypto:287:8
+      4    5.1%          Function: ~<anonymous> node:internal/child_process:1:1
+      4  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    3.8%          Function: ~<anonymous> node:internal/crypto/hkdf:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    3.8%          Function: ~<anonymous> node:child_process:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      3    3.8%          Function: ~<anonymous> node:_http_client:1:1
+      3  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.6%          LazyCompile: ~get node:dns:334:8
+      2  100.0%            /usr/local/bin/node
+      2    2.6%          Function: ~<anonymous> node:net:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.6%          Function: ~<anonymous> node:internal/cluster/primary:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.6%          Function: ~<anonymous> node:assert:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.6%          Function: ~<anonymous> node:_tls_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      2    2.6%          Function: ~<anonymous> node:_http_common:1:1
+      2  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          LazyCompile: ~lazyLoadStreams node:fs:2841:25
+      1  100.0%            LazyCompile: ~get ReadStream node:fs:2984:17
+      1    1.3%          LazyCompile: ~initializeCJSLoader node:internal/bootstrap/pre_execution:422:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1    1.3%          LazyCompile: ~get BlockList node:net:1779:16
+      1  100.0%            /usr/local/bin/node
+      1    1.3%          LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1  100.0%            LazyCompile: ~getStdout node:internal/bootstrap/switches/is_main_thread:121:19
+      1    1.3%          Function: ~<anonymous> node:internal/crypto/util:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:internal/crypto/pbkdf2:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:internal/crypto/cipher:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:internal/cluster/round_robin_handle:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:internal/blocklist:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:dgram:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:cluster:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:_tls_wrap:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:_http_server:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1    1.3%          Function: ~<anonymous> node:_http_outgoing:1:1
+      1  100.0%            Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+     14   14.3%        Function: ^compileForPublicLoader node:internal/bootstrap/loaders:246:25
+     12   85.7%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+     12  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2   14.3%          LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      5    5.1%        LazyCompile: ~compileForPublicLoader node:internal/bootstrap/loaders:246:25
+      3   60.0%          LazyCompile: ~loadNativeModule node:internal/modules/cjs/helpers:44:26
+      3  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      2   40.0%          Function: ^loadNativeModule node:internal/modules/cjs/helpers:44:26
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1    1.0%        LazyCompile: *compileFunction node:vm:308:25
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     69    1.5%      Function: ^writevGeneric node:internal/stream_base_commons:126:23
+     69  100.0%        Function: ^Socket._writeGeneric node:net:769:42
+     69  100.0%          Function: ^Socket._writev node:net:801:36
+     69  100.0%            Function: ^doWrite node:internal/streams/writable:398:17
+     67    1.4%      Function: ^stat node:fs:1452:14
+     67  100.0%        Function: ^sendFile /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:716:51
+     66   98.5%          Function: ^pipe /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:510:43
+     66  100.0%            Function: ^serveStatic /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/serve-static/index.js:72:31
+      1    1.5%          LazyCompile: ~pipe /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:510:43
+      1  100.0%            LazyCompile: ~serveStatic /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/serve-static/index.js:72:31
+     61    1.3%      Function: ^handleWriteReq node:internal/stream_base_commons:45:24
+     61  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:151:22
+     49   80.3%          Function: ^Socket._writeGeneric node:net:769:42
+     49  100.0%            Function: ^Socket._write node:net:806:35
+     12   19.7%          LazyCompile: *writeOrBuffer node:internal/streams/writable:365:23
+      7   58.3%            Function: ^_write node:internal/streams/writable:283:16
+      5   41.7%            LazyCompile: *_write node:internal/streams/writable:283:16
+     59    1.3%      Function: ^compression /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:59:31
+     33   55.9%        LazyCompile: *handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+     17   51.5%          Function: ^trim_prefix /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:288:23
+     17  100.0%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+     12   36.4%          LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+     12  100.0%            Function: ^dispatch /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:98:45
+      4   12.1%          Function: ^next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      4  100.0%            Function: ^dispatch /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:98:45
+     26   44.1%        Function: ^handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+     21   80.8%          Function: ^trim_prefix /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:288:23
+     13   61.9%            Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:275:64
+      8   38.1%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      5   19.2%          LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      5  100.0%            Function: ^dispatch /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:98:45
+    218    3.2%    LazyCompile: *compileFunction node:vm:308:25
+    144   66.1%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+    144  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+    144  100.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+    144  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+     74   33.9%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     74  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+     74  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     74  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+   1978   19.5%  __write
+   1688   85.3%    /usr/local/bin/node
+     43    2.5%      /usr/local/bin/node
+      3    7.0%        Function: ^getOwn node:internal/bootstrap/loaders:180:16
+      3  100.0%          Function: ^syncExports node:internal/bootstrap/loaders:287:14
+      2   66.7%            LazyCompile: ~<anonymous> node:internal/bootstrap/loaders:273:15
+      1   33.3%            Function: ^<anonymous> node:internal/bootstrap/loaders:273:15
+      1    2.3%        LazyCompile: ~throwExceptionIf /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/configuration.js:27:26
+      1  100.0%          LazyCompile: ~configure /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/configuration.js:37:19
+      1  100.0%            LazyCompile: ~configure /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/log4js.js:59:19
+      1    2.3%        LazyCompile: ~pluralize /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/helpers/pluralize.js:82:19
+      1  100.0%          LazyCompile: ~exports.toCollectionName /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/utils.js:44:36
+      1  100.0%            LazyCompile: ~Mongoose._model /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/index.js:533:37
+      1    2.3%        LazyCompile: ~pipe /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:510:43
+      1  100.0%          LazyCompile: ~serveStatic /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/serve-static/index.js:72:31
+      1  100.0%            LazyCompile: ~handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+      1    2.3%        LazyCompile: ~pathtoRegexp /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          LazyCompile: ~Layer /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~use /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:434:25
+      1    2.3%        LazyCompile: ~parseOptions /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:211:22
+      1  100.0%          LazyCompile: ~MongoClient /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/mongo_client.js:60:16
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/connection.js:781:31
+      1    2.3%        LazyCompile: ~parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:108:10
+      1  100.0%          LazyCompile: ~yargsParser.detailed /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:1041:33
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:54967
+      1    2.3%        LazyCompile: ~parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/dotenv/lib/main.js:15:16
+      1  100.0%          LazyCompile: ~config /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/dotenv/lib/main.js:64:17
+      1  100.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/config.js:1:1
+      1    2.3%        LazyCompile: ~module.exports.get_napi_build_versions /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:115:50
+      1  100.0%          LazyCompile: ~module.exports.expand_commands /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:94:42
+      1  100.0%            LazyCompile: ~parseOpts /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js:144:37
+      1    2.3%        LazyCompile: ~match /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:110:39
+      1  100.0%          LazyCompile: ~matchLayer /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:578:20
+      1  100.0%            LazyCompile: ~next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      1    2.3%        LazyCompile: ~h /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:1423
+      1  100.0%          LazyCompile: ~boolean /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:28817
+      1  100.0%            LazyCompile: ~addHelpOpt /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:27910
+      1    2.3%        LazyCompile: ~getCurrentNodeMethods /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/methods/index.js:29:31
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/methods/index.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~getColorDepth node:internal/tty:106:23
+      1  100.0%          LazyCompile: ~value node:internal/console/constructor:299:20
+      1  100.0%            LazyCompile: ~value node:internal/console/constructor:320:20
+      1    2.3%        LazyCompile: ~get hasDataBearingServers /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology_description.js:232:30
+      1  100.0%          LazyCompile: ~shouldCheckForSessionSupport /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/sdam/topology.js:323:33
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1    2.3%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ur/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ur/index.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/animal/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/animal/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/de_AT/address/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/de_AT/address/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~combineAliases /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:957:24
+      1  100.0%          LazyCompile: ~parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:108:10
+      1  100.0%            LazyCompile: ~yargsParser.detailed /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:1041:33
+      1    2.3%        LazyCompile: ~colorSupport /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/color-support/index.js:39:23
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/node_modules/gauge/has-color.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~clone /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/graceful-fs/clone.js:9:16
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/graceful-fs/graceful-fs.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~checkAllAliases /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:840:33
+      1  100.0%          LazyCompile: ~setKey /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:750:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:724:52
+      1    2.3%        LazyCompile: ~applyCoercions /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:693:32
+      1  100.0%          LazyCompile: ~parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:108:10
+      1  100.0%            LazyCompile: ~yargsParser.detailed /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:1041:33
+      1    2.3%        LazyCompile: ~addLevels /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/levels.js:45:19
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/levels.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    2.3%        LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%          LazyCompile: ~Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1  100.0%            LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1    2.3%        LazyCompile: ~Kareem.filter /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/kareem/index.js:326:35
+      1  100.0%          LazyCompile: ~applyHooks /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/helpers/model/applyHooks.js:32:20
+      1  100.0%            LazyCompile: ~compile /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/model.js:4793:33
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:1130
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~o /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:912
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:809:35
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~extendAliases /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs-parser/build/index.cjs:808:31
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:43:71
+      1  100.0%          Function: ^emit node:events:340:44
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:380:34
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:72:39
+      1  100.0%          LazyCompile: ~onresolve node:dns:207:19
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:90:85
+      1  100.0%          LazyCompile: ~messageHandler /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:416:35
+      1  100.0%            Function: ^emit node:events:340:44
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/sdam/server.js:43:71
+      1  100.0%          Function: ^emit node:events:340:44
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connection_pool.js:380:34
+      1    2.3%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/categories.js:74:27
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/configuration.js:46:21
+      1  100.0%            /usr/local/bin/node
+      1    2.3%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/browserDocument.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.3%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.3%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/fs-extra/lib/fs/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.3%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    2.3%        Function: ^processTicksAndRejections node:internal/process/task_queues:68:35
+      1    2.3%        Function: ^pathtoRegexp /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/path-to-regexp/index.js:28:22
+      1  100.0%          Function: ^Layer /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:33:15
+      1  100.0%            LazyCompile: ~route /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:497:29
+      1    2.3%        Function: ^get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_GH/address/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_GH/address/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+    210   10.6%    LazyCompile: *compileFunction node:vm:308:25
+    123   58.6%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+    123  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+    123  100.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+    122   99.2%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+     87   41.4%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+     87  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+     87  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     87  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+    202    2.0%  /usr/lib/x86_64-linux-gnu/libc-2.31.so
+    147   72.8%    /usr/local/bin/node
+      8    5.4%      LazyCompile: *realpathSync node:fs:2408:22
+      6   75.0%        Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      6  100.0%          Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      6  100.0%            Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      2   25.0%        LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      7    4.8%      /usr/local/bin/node
+      3   42.9%        Function: ^FastBuffer node:internal/buffer:958:14
+      3  100.0%          Function: ^createUnsafeBuffer node:internal/buffer:1059:28
+      3  100.0%            Function: ^createPool node:buffer:150:20
+      1   14.3%        LazyCompile: ~connectHandler /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:304:28
+      1  100.0%          LazyCompile: ~onceWrapper node:events:504:21
+      1  100.0%            Function: ^emit node:events:340:44
+      1   14.3%        LazyCompile: *realpathSync node:fs:2408:22
+      1  100.0%          LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      1   14.3%        Function: ^asString /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/date-format/lib/index.js:29:18
+      1  100.0%          Function: ^timestampLevelAndCategory /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:41:35
+      1  100.0%            Function: ^colouredLayout /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:70:24
+      1   14.3%        Function: ^<anonymous> node:internal/fs/utils:357:35
+      1  100.0%          Function: ^<anonymous> node:internal/fs/utils:668:38
+      1  100.0%            Function: ^<anonymous> node:internal/fs/utils:680:42
+      5    3.4%      LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      3   60.0%        Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      3  100.0%          Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2   40.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1   50.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      1   50.0%          Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1  100.0%            Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3    2.0%      LazyCompile: *resolve node:path:1091:10
+      3  100.0%        LazyCompile: *readPackageScope node:internal/modules/cjs/loader:321:26
+      2   66.7%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1   50.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1   50.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1   33.3%          Function: ^trySelf node:internal/modules/cjs/loader:441:17
+      1  100.0%            Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2    1.4%      LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      1   50.0%        LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      1  100.0%          LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      1  100.0%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      1   50.0%        Function: ^error /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/serve-static/index.js:115:39
+      1  100.0%          Function: ^emit node:events:340:44
+      1  100.0%            Function: ^error /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/send/index.js:267:45
+      2    1.4%      LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   50.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/index.js:1:1
+      1   50.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/engine.io-parser/build/cjs/index.js:1:1
+      2    1.4%      Function: ^compression /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:59:31
+      2  100.0%        LazyCompile: *handle /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/layer.js:86:49
+      1   50.0%          LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:114:16
+      1  100.0%            Function: ^dispatch /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/route.js:98:45
+      1   50.0%          Function: ^trim_prefix /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:288:23
+      1  100.0%            LazyCompile: *next /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/router/index.js:176:16
+      2    1.4%      Function: ^arrayClone node:events:747:20
+      2  100.0%        LazyCompile: *emit node:events:340:44
+      2  100.0%          Function: ^endReadableNT node:internal/streams/readable:1336:23
+      2  100.0%            LazyCompile: *processTicksAndRejections node:internal/process/task_queues:68:35
+      2    1.4%      Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%        Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      2  100.0%          Function: ^require node:internal/modules/cjs/helpers:101:31
+      1   50.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/drivers/node-mongodb-native/index.js:1:1
+      1   50.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/team/index.js:1:1
+      2    1.4%      Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+      2  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      2  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      2  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+     31   15.3%    LazyCompile: *compileFunction node:vm:308:25
+     24   77.4%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+     24  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     24  100.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     24  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      7   22.6%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      7  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      7  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      7  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      6    3.0%    LazyCompile: *realpathSync node:fs:2408:22
+      3   50.0%      LazyCompile: *Module._findPath node:internal/modules/cjs/loader:494:28
+      3  100.0%        Function: ^Module._resolveFilename node:internal/modules/cjs/loader:848:35
+      3  100.0%          Function: ^Module._load node:internal/modules/cjs/loader:757:24
+      3  100.0%            Function: ^Module.require node:internal/modules/cjs/loader:997:36
+      3   50.0%      Function: ^toRealPath node:internal/modules/cjs/loader:393:20
+      3  100.0%        Function: ^tryFile node:internal/modules/cjs/loader:384:17
+      3  100.0%          Function: ^tryExtensions node:internal/modules/cjs/loader:400:23
+      3  100.0%            Function: ^Module._findPath node:internal/modules/cjs/loader:494:28
+
+    120    1.2%  epoll_pwait
+
+    118    1.2%  fwrite
+     75   63.6%    /usr/local/bin/node
+      3    4.0%      /usr/local/bin/node
+      2   66.7%        LazyCompile: ~MongoStore /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/connect-mongo/build/main/lib/MongoStore.js:75:16
+      2  100.0%          LazyCompile: ~create /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/connect-mongo/build/main/lib/MongoStore.js:135:18
+      2  100.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/server.js:1:1
+      1   33.3%        LazyCompile: ~parse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/content-type/index.js:106:16
+      1  100.0%          LazyCompile: ~setCharset /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/utils.js:246:41
+      1  100.0%            LazyCompile: ~send /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:107:25
+      2    2.7%      LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      2  100.0%        LazyCompile: ~getStdout node:internal/bootstrap/switches/is_main_thread:121:19
+      2  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:1
+      2  100.0%            LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~writeCommand /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/message_stream.js:35:17
+      1  100.0%        LazyCompile: ~write /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connection.js:488:15
+      1  100.0%          LazyCompile: ~command /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connection.js:162:12
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connect.js:78:43
+      1    1.3%      LazyCompile: ~validate_config /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%        LazyCompile: ~exports.find /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/bcrypt/bcrypt.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~urlParse node:url:152:18
+      1  100.0%        LazyCompile: ~validate_config /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js:195:25
+      1  100.0%          LazyCompile: ~exports.find /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js:17:24
+      1  100.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/bcrypt/bcrypt.js:1:1
+      1    1.3%      LazyCompile: ~setupWarningHandler node:internal/bootstrap/pre_execution:142:29
+      1  100.0%        LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.3%      LazyCompile: ~s /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ar/address/index.js:1:284
+      1  100.0%        LazyCompile: ~t /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ar/address/index.js:1:466
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ar/address/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~receiveResponse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/stream_description.js:31:20
+      1  100.0%        LazyCompile: ~set hello /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:76:14
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connect.js:90:85
+      1    1.3%      LazyCompile: ~realpathSync node:fs:2408:22
+      1  100.0%        LazyCompile: ~toRealPath node:internal/modules/cjs/loader:393:20
+      1  100.0%          LazyCompile: ~Module._findPath node:internal/modules/cjs/loader:494:28
+      1  100.0%            LazyCompile: ~resolveMainPath node:internal/modules/run_main:11:25
+      1    1.3%      LazyCompile: ~prepareMainThreadExecution node:internal/bootstrap/pre_execution:23:36
+      1  100.0%        Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.3%      LazyCompile: ~parseHostName /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/whatwg-url/lib/url-state-machine.js:773:65
+      1  100.0%        Function: ^URLStateMachine /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/whatwg-url/lib/url-state-machine.js:481:25
+      1  100.0%          LazyCompile: ~module.exports.basicURLParse /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/whatwg-url/lib/url-state-machine.js:1206:41
+      1  100.0%            LazyCompile: ~URLImpl /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/whatwg-url/lib/URL-impl.js:7:14
+      1    1.3%      LazyCompile: ~o /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/address/index.js:1:466
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/address/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~nextTick node:internal/process/task_queues:104:18
+      1  100.0%        LazyCompile: ~immediate /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/helpers/immediate.js:12:36
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/connection.js:571:34
+      1  100.0%            LazyCompile: ~promiseOrCallback /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/helpers/promiseOrCallback.js:8:44
+      1    1.3%      LazyCompile: ~messageHandler /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:416:35
+      1  100.0%        Function: ^emit node:events:340:44
+      1  100.0%          LazyCompile: ~processIncomingData /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1  100.0%            LazyCompile: ~_write /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1    1.3%      LazyCompile: ~messageHandler /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connection.js:416:35
+      1  100.0%        Function: ^emit node:events:340:44
+      1  100.0%          LazyCompile: ~processIncomingData /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/message_stream.js:79:29
+      1  100.0%            LazyCompile: ~_write /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/message_stream.js:26:11
+      1    1.3%      LazyCompile: ~log node:internal/console/constructor:358:6
+      1  100.0%        /usr/local/bin/node
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/console.js:5:10
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/logLevelFilter.js:4:10
+      1    1.3%      LazyCompile: ~i /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_BR/phone_number/index.js:1:466
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_BR/phone_number/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/vi/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/vi/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/uk/company/name.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/uk/company/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/uk/company/index.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/domain_suffix.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/index.js:1:1
+      1  100.0%            LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/street_name.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/index.js:1:414
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hy/name/female_first_name.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hy/name/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hy/name/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fi/name/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fi/name/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/company/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/company/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/cell_phone/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/cell_phone/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/app/version.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/app/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/app/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~format node:internal/util/inspect:1879:16
+      1  100.0%        LazyCompile: ~timestampLevelAndCategory /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:41:35
+      1  100.0%          LazyCompile: ~colouredLayout /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/layouts.js:70:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/console.js:5:10
+      1    1.3%      LazyCompile: ~f /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_ZA/address/index.js:1:466
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_ZA/address/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~createAppender /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/index.js:62:24
+      1  100.0%        LazyCompile: ~getAppender /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/index.js:48:21
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/appenders/index.js:112:41
+      1  100.0%            /usr/local/bin/node
+      1    1.3%      LazyCompile: ~compile /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/model.js:4793:33
+      1  100.0%        LazyCompile: ~Mongoose._model /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/index.js:533:37
+      1  100.0%          LazyCompile: ~Mongoose.model /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/index.js:469:36
+      1  100.0%            Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/models/user.js:1:1
+      1    1.3%      LazyCompile: ~command /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection.js:162:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/sdam/server.js:184:42
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:265:23
+      1  100.0%            LazyCompile: ~processWaitQueue /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/cmap/connection_pool.js:418:26
+      1    1.3%      LazyCompile: ~check node:tls:166:15
+      1  100.0%        Function: ^wildcard node:tls:271:22
+      1  100.0%          /usr/local/bin/node
+      1  100.0%            LazyCompile: ~checkServerIdentity node:tls:230:59
+      1    1.3%      LazyCompile: ~SchemaString /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/schema/string.js:24:22
+      1  100.0%        LazyCompile: ~Schema.interpretAsType /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/schema.js:919:44
+      1  100.0%          LazyCompile: ~Schema.path /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/schema.js:655:33
+      1  100.0%            LazyCompile: ~add /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/schema.js:487:36
+      1    1.3%      LazyCompile: ~Readable node:internal/streams/readable:181:18
+      1  100.0%        LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%          LazyCompile: ~Socket node:net:283:16
+      1  100.0%            LazyCompile: ~WriteStream node:tty:85:21
+      1    1.3%      LazyCompile: ~Mongoose._applyPlugins /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/index.js:630:44
+      1  100.0%        LazyCompile: ~Mongoose.model /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/index.js:469:36
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/models/user.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    1.3%      LazyCompile: ~Module._load node:internal/modules/cjs/loader:757:24
+      1  100.0%        LazyCompile: ~executeUserEntryPoint node:internal/modules/run_main:74:31
+      1  100.0%          Function: ~<anonymous> node:internal/main/run_main_module:1:1
+      1    1.3%      LazyCompile: ~Duplex node:internal/streams/duplex:52:16
+      1  100.0%        LazyCompile: ~Socket node:net:283:16
+      1  100.0%          LazyCompile: ~WriteStream node:tty:85:21
+      1  100.0%            LazyCompile: ~createWritableStdioStream node:internal/bootstrap/switches/is_main_thread:41:35
+      1    1.3%      LazyCompile: ~Collection /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/collection.js:65:16
+      1  100.0%        LazyCompile: ~collection /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/db.js:192:15
+      1  100.0%          LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/connect-mongo/build/main/lib/MongoStore.js:124:42
+      1  100.0%            /usr/local/bin/node
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:16:48
+      1  100.0%        LazyCompile: ~maybePromise /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/utils.js:484:22
+      1  100.0%          LazyCompile: ~executeOperation /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/operations/execute_operation.js:11:26
+      1  100.0%            LazyCompile: ~createCollection /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/db.js:153:21
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/sk/company/adjective.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/sk/company/adjective.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/name/name.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/name/name.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/name/name.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/name/name.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/internet/domain_suffix.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nl_BE/internet/domain_suffix.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/name/last_name.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/name/last_name.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/default_country.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/default_country.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fa/address/country.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fa/address/country.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/es_MX/address/street.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/es_MX/address/street.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_NG/address/state.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_NG/address/state.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/internet/free_email.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/internet/free_email.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_GH/address/default_country.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_GH/address/default_country.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/commerce/product_name.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/commerce/product_name.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/animal/dog.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en/animal/dog.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    1.3%      Function: ~<anonymous> node:internal/fs/promises:1:1
+      1  100.0%        LazyCompile: ~compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          LazyCompile: ~nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:internal/modules/esm/get_source:1:1
+      1    1.3%      Function: ~<anonymous> node:internal/dns/utils:1:1
+      1  100.0%        Function: ^compileForInternalLoader node:internal/bootstrap/loaders:299:27
+      1  100.0%          Function: ^nativeModuleRequire node:internal/bootstrap/loaders:332:29
+      1  100.0%            Function: ~<anonymous> node:dns:1:1
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/yargs/build/index.cjs:1:1
+      1  100.0%        LazyCompile: ~Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          LazyCompile: ~Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            LazyCompile: ~Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/whatwg-url/lib/encoding.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/node_modules/mongodb/lib/connection_string.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongoose/lib/cursor/QueryCursor.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/zh_TW/phone_number/formats.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ur/app/version.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/sv/index.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/lv/address/city.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/it/address/country.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hy/commerce/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hy/address/street_name.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fa/phone_number/formats.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/de/date/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/cz/company/noun.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ar/vehicle/manufacturer.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/af_ZA/company/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    1.3%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/definitions/definitions.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+     40   33.9%    LazyCompile: *compileFunction node:vm:308:25
+     34   85.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+     34  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+     34  100.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+     34  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      6   15.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      6  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      6  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      6  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+
+    111    1.1%  __lll_lock_wait
+     33   29.7%    /usr/local/bin/node
+      5   15.2%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_NG/address/postcode.js:1:1
+      5  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      5  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      5  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      2    6.1%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hr/name/last_name.js:1:430
+      2  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/hr/name/last_name.js:1:1
+      2  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      2  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      2    6.1%      Function: ^setRequestTimeout node:_http_server:762:27
+      1    3.0%      LazyCompile: ~write_ node:_http_outgoing:730:16
+      1  100.0%        Function: ^end node:_http_outgoing:833:45
+      1  100.0%          Function: ^end /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:92:28
+      1  100.0%            Function: ^end /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/compression/index.js:92:28
+      1    3.0%      LazyCompile: ~lookupAndConnect node:net:995:26
+      1  100.0%        LazyCompile: ~Socket.connect node:net:937:36
+      1  100.0%          Function: ^connect node:_tls_wrap:1597:35
+      1  100.0%            LazyCompile: ~makeConnection /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mongodb/lib/cmap/connect.js:241:24
+      1    3.0%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/internet/index.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    3.0%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/address/index.js:1:533
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/fr_BE/address/index.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    3.0%      LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/company/suffix.js:1:362
+      1  100.0%        LazyCompile: ~get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/company/index.js:1:533
+      1  100.0%          Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/en_IND/company/index.js:1:1
+      1  100.0%            Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1    3.0%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/address/city.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/address/city.js:1:1
+      1  100.0%          LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    3.0%      LazyCompile: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nb_NO/name/first_name.js:1:430
+      1  100.0%        Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/nb_NO/name/first_name.js:1:1
+      1  100.0%          Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%            Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express-session/index.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ru/address/index.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/name/name.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ro/address/street_name.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/name/prefix.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_PT/internet/free_email.js:1:1
+      1  100.0%        LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/pt_BR/lorem/index.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/he/cell_phone/formats.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/he/address/postcode_by_state.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ge/address/street_title.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/cz/address/street.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ~<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/@faker-js/faker/dist/cjs/locales/ar/commerce/product_name.js:1:1
+      1  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      1  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      1  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+      1    3.0%      Function: ^slowCases node:internal/util:165:19
+      1  100.0%        Function: ^normalizeEncoding node:internal/util:160:27
+      1  100.0%          Function: ^isEncoding node:buffer:529:40
+      1  100.0%            Function: ^_write node:internal/streams/writable:283:16
+      1    3.0%      Function: ^get /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/node_modules/debug/src/common.js:125:9
+      1  100.0%        Function: ^debug /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/node_modules/debug/src/common.js:66:17
+      1  100.0%          Function: ^sendLogEventToAppender /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/log4js.js:36:32
+      1  100.0%            Function: ^<anonymous> /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/log4js/lib/clustering.js:24:21
+      1    3.0%      Function: ^afterWriteDispatched node:internal/stream_base_commons:159:30
+      1  100.0%        Function: ^writeGeneric node:internal/stream_base_commons:151:22
+      1  100.0%          Function: ^Socket._writeGeneric node:net:769:42
+      1  100.0%            Function: ^Socket._write node:net:806:35
+      1    3.0%      Function: ^Readable.resume node:internal/streams/readable:964:37
+      1  100.0%        Function: ^Socket.resume node:net:630:35
+      1  100.0%          Function: ^readStart node:_http_incoming:40:19
+      1  100.0%            Function: ^parserOnMessageComplete node:_http_common:147:33
+      1    3.0%      /usr/local/bin/node
+      1  100.0%        LazyCompile: ~lookup /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/mime/mime.js:102:19
+      1  100.0%          LazyCompile: ~header /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:759:29
+      1  100.0%            LazyCompile: ~json /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/16-Loggers-gzip-analisis-performance/node_modules/express/lib/response.js:239:25
+      8    7.2%    LazyCompile: *compileFunction node:vm:308:25
+      4   50.0%      LazyCompile: *Module._compile node:internal/modules/cjs/loader:1055:37
+      4  100.0%        Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      4  100.0%          LazyCompile: *Module.load node:internal/modules/cjs/loader:969:33
+      4  100.0%            LazyCompile: *Module._load node:internal/modules/cjs/loader:757:24
+      4   50.0%      Function: ^wrapSafe node:internal/modules/cjs/loader:1017:18
+      4  100.0%        Function: ^Module._compile node:internal/modules/cjs/loader:1055:37
+      4  100.0%          Function: ^Module._extensions..js node:internal/modules/cjs/loader:1110:37
+      4  100.0%            Function: ^Module.load node:internal/modules/cjs/loader:969:33
+

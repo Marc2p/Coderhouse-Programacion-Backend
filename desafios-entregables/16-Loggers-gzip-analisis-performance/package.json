@@ -4,13 +4,14 @@
   "description": "Desafio 6, websockets",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "node benchmark.js",
+    "start": "0x server.js"
   },
   "author": "Marcos Peirone",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^6.0.0-alpha.6",
+    "autocannon": "^7.7.2",
     "bcrypt": "^5.0.1",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
