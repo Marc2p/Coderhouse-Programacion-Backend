@@ -1,3 +1,4 @@
+/* Desactivo el child process para el análisis de performance
 const randomNumber = (cant) => {
   let cantidad = +cant;
   let numbers =[];
@@ -16,4 +17,4 @@ process.on('message', (cant) => {
   console.log(`cantidad: ${cant}`);
   const generar = randomNumber(cant);
   process.send({res: generar});
-});
+});*/

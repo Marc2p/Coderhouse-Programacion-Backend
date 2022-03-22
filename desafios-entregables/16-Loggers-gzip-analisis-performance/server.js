@@ -1,6 +1,6 @@
 const {MONGOURL, PORT} = require("./config");
 require("./mongodb/mongooseLoader");
-const {fork} = require('child_process');
+// const {fork} = require('child_process');
 const User = require('./models/user');
 const bCrypt = require ('bcrypt');
 const { normalizar, print, denormalizar } = require("./utils/normalizar");
@@ -174,8 +174,11 @@ app.get("/info", compression(), (req, res) => {
     cwd: process.cwd(),
     CPUS: numCPUs
   }
+  console.log(info);
   res.json(info);
 })
+
+/* desactivo el child process para el análisis de performance
 app.get("/random/:cant?", (req, res) => {
   const forked = fork('./utils/generateRandom.js');
   let cant = +req.params.cant || 100000000;
@@ -184,6 +187,7 @@ app.get("/random/:cant?", (req, res) => {
     res.send(numeros.res);
   })
 })
+*/
 
 apiRouter.get("/", async (req, res, next) => {
   if (req.isAuthenticated()) {
