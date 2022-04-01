@@ -1,11 +1,11 @@
 {
-  "name": "10-preentrega2",
+  "name": "18-preentrega3",
   "version": "1.0.0",
-  "description": "Preentrega 2 del proyecto final del curso de programación Backend de Coderhouse. Ecomerce",
+  "description": "Preentrega 3 del proyecto final del curso de programación Backend de Coderhouse. Ecomerce",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "author": "Marcos Peirone",
   "license": "ISC",

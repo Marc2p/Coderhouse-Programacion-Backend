@@ -32,21 +32,6 @@ const productSchema = mongoose.Schema({
   }
 });
 
-const cartSchema = mongoose.Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  timestamp: {
-    type: Date,
-    default: Date.now
-  },
-  productos: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Productos'
-    }
-  ]
-});
+const ProductModel = mongoose.model('Productos', productSchema);
 
-const Productos = mongoose.model('Productos', productSchema);
-const Carritos = mongoose.model('Carritos', cartSchema);
-
-module.exports = {Productos, Carritos};
+module.exports = ProductModel;

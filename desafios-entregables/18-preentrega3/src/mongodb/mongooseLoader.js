@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connection = mongoose.connect(process.env.MONGODB_URL+'?authSource=admin&w=1', {
+const connection = mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

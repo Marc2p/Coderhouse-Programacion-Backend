@@ -1,11 +1,11 @@
-const models = require("../models/schemas");
+const productModel = require("../models/productSchema");
 
 class Productos {
   constructor() {}
   
   async getAllProducts() {
     try {
-      const contenido = await models.Productos.find().then((productos) => productos).catch((err) => {
+      const contenido = await productModel.find().then((productos) => productos).catch((err) => {
         throw new Error(err);
       });
       if (!contenido) {
@@ -19,7 +19,7 @@ class Productos {
   
   async getProductById(id) {
     try {
-      const producto = await models.Productos.findById(id).then((producto) => producto).catch((err) => {
+      const producto = await productModel.findById(id).then((producto) => producto).catch((err) => {
         throw new Error(err);
       });
       if (!producto) {
@@ -34,8 +34,8 @@ class Productos {
   async saveProduct(obj) {
     try {
       obj.timestamp = Date.now();
-      const productoSaveModel = new models.Productos(obj);
-      const savedProduct = await models.Productos.insertMany(productoSaveModel).then((producto) => producto).catch((err) => {
+      const productoSaveModel = new productModel(obj);
+      const savedProduct = await productModel.insertMany(productoSaveModel).then((producto) => producto).catch((err) => {
         throw new Error(err);
       });
       return savedProduct;
@@ -43,24 +43,6 @@ class Productos {
       throw error;
     }
   }
-  
-  /* no se usa
-  async deleteAllProducts() {
-    try {
-      const array = await this.getAllProducts().then((res) => res).catch((error) => {
-        throw error;
-      });
-      if (array.length <= 0) {
-        throw new Error('No se encontraron productos');
-      }
-      const deletedProducts = await models.products.deleteMany().then((deleted) => deleted).catch((err) => {
-        throw new Error(err);
-      });
-      return deletedProducts;
-    } catch (error) {
-      throw error;
-    }
-  } */
   
   async deleteProductById(id) {
     try {
@@ -70,7 +52,7 @@ class Productos {
       if (!producto) {
         throw new Error ("Producto no encontrado");
       }
-      const deletedProduct = await models.Productos.deleteOne(producto).then((deleted) => deleted).catch((err) => {
+      const deletedProduct = await productModel.deleteOne(producto).then((deleted) => deleted).catch((err) => {
         throw new Error(err);
       });
       return deletedProduct;
@@ -87,7 +69,7 @@ class Productos {
       if (!producto) {
         throw new Error("Producto no encontrado");
       }
-      const updatedProduct = await models.Productos.findByIdAndUpdate(id, { $set: {
+      const updatedProduct = await productModel.findByIdAndUpdate(id, { $set: {
         title: title,
         description: description,
         code: code,
