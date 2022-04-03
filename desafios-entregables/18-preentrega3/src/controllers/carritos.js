@@ -1,6 +1,6 @@
 const Carritos = require("../daos/carritos");
 const Productos = require("../daos/productos");
-let carritos = new Carritos("./models/carritos.txt");
+let carritos = new Carritos();
 let productos = new Productos();
 
 const getProductsFromCart = async (req, res, next) => {

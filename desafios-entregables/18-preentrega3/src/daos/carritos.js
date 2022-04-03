@@ -1,3 +1,4 @@
+const logger = require('../utils/logger');
 const CartModel = require("../models/cartSchema");
 
 class Carritos {
@@ -5,21 +6,17 @@ class Carritos {
 
   async getProductsFromCart(id) {
     try {
-      const carrito = await CartModel.findById(id).then((carrito) => carrito).catch((err) => {
-        throw new Error(err);
-      });
+      const carrito = await CartModel.findById(id);
       if (!carrito) {
         throw new Error("Carrito no encontrado");
       }
-      const productos = await CartModel.findById(id).populate('productos').then((productos) => productos).catch((err) => {
-        throw new Error(err);
-      })
+      const productos = await CartModel.findById(id).populate('productos');
       if (!productos) {
         throw new Error("No hay productos en el carrito");
       }
       return productos;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
@@ -32,7 +29,7 @@ class Carritos {
       });
       return savedCart;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
 
@@ -43,15 +40,13 @@ class Carritos {
       });
       return carrito;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
   async deleteCartById(id) {
     try {
-      const carrito = await CartModel.findById(id).then((cart) => cart).catch((err) => {
-        throw new Error(err);
-      });
+      const carrito = await CartModel.findById(id);
       if (!carrito) {
         throw new Error ("Carrito no encontrado");
       }
@@ -60,21 +55,17 @@ class Carritos {
       });
       return deletedCart;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
 
   async deleteProductFromCart(id, id_prod) {
     try {
-      const carrito = await CartModel.findById(id).then((carrito) => carrito).catch((err) => {
-        throw new Error(err);
-      });
+      const carrito = await CartModel.findById(id);
       if (!carrito) {
         throw new Error("Carrito no encontrado");
       }
-      const product = await CartModel.findOne({ _id: id, productos: id_prod}).then((product) => product).catch((err) => {
-        throw new Error(err);
-      });
+      const product = await CartModel.findOne({ _id: id, productos: id_prod});
       if (!product) {
         throw new Error("Producto no encontrado en el carrito");
       }
@@ -83,7 +74,7 @@ class Carritos {
       });
       return product;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
 

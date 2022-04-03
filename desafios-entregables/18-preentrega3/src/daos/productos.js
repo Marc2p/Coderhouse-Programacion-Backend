@@ -1,3 +1,4 @@
+const logger = require('../utils/logger');
 const productModel = require("../models/productSchema");
 
 class Productos {
@@ -5,29 +6,25 @@ class Productos {
   
   async getAllProducts() {
     try {
-      const contenido = await productModel.find().then((productos) => productos).catch((err) => {
-        throw new Error(err);
-      });
+      const contenido = await productModel.find();
       if (!contenido) {
         throw new Error("No se encontraron productos");
       }
       return contenido;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
   async getProductById(id) {
     try {
-      const producto = await productModel.findById(id).then((producto) => producto).catch((err) => {
-        throw new Error(err);
-      });
+      const producto = await productModel.findById(id);
       if (!producto) {
         throw new Error("Producto no encontrado");
       }
       return producto;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
@@ -40,15 +37,13 @@ class Productos {
       });
       return savedProduct;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
   async deleteProductById(id) {
     try {
-      const producto = await this.getProductById(id).then((product) => product).catch((err) => {
-        throw new Error(err);
-      });
+      const producto = await this.getProductById(id);
       if (!producto) {
         throw new Error ("Producto no encontrado");
       }
@@ -57,15 +52,13 @@ class Productos {
       });
       return deletedProduct;
     }    catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
   
   async updateProduct(id, title, description, code, price, thumbnail, stock) {
     try {
-      const producto = await this.getProductById(id).then((product) => product).catch((err) => {
-        throw new Error(err);
-      });
+      const producto = await this.getProductById(id);
       if (!producto) {
         throw new Error("Producto no encontrado");
       }
@@ -81,7 +74,7 @@ class Productos {
       });
       return updatedProduct;
     } catch (error) {
-      throw error;
+      logger.warn(error);
     }
   }
 }
