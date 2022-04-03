@@ -1,19 +1,25 @@
-const dotenv = require('dotenv').config();
+const dotenv = require("dotenv").config();
 const express = require("express");
 const app = express();
 require("./src/mongodb/mongooseLoader");
 const PORT = process.env.PORT || 8080;
-const logger = require('./src/utils/logger');
+const logger = require("./src/utils/logger");
+
+const session = require("express-session");
+const passport = require("passport");
+const passportStrategy = require("./src/utils/passport");
+const MongoStore = require("connect-mongo");
+const flash = require('connect-flash');
 
 const clusterMode = true;
-const cluster = require('cluster');
-const numCPUs = require('os').cpus().length;
+const cluster = require("cluster");
+const numCPUs = require("os").cpus().length;
 
 const errorHandler = require("./src/middlewares/errorHandler");
 const notFound = require("./src/middlewares/notFound");
 
-const apiProductos = require('./src/routes/productos');
-const apiCarritos = require('./src/routes/carritos');
+const apiProductos = require("./src/routes/productos");
+const apiCarritos = require("./src/routes/carritos");
 
 if (cluster.isMaster && clusterMode) {
   logger.info(`PID MASTER ${process.pid}`);
@@ -21,18 +27,37 @@ if (cluster.isMaster && clusterMode) {
     cluster.fork();
   }
   cluster.on('exit', worker => {
-    logger.info('Worker', worker.process.pid, 'died', new Date().toLocaleString());
+    logger.info("Worker", worker.process.pid, "died", new Date().toLocaleString());
     cluster.fork();
   })
 }
 else {
 
-  app.use(express.static('./public'));
+  app.use(express.static("./public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  app.use('/api/productos', apiProductos);
-  app.use('/api/carrito', apiCarritos);
+  app.use(
+    session({
+      secret: "AlckejcUi5Jnm3rFhNjUil87",
+      resave: true,
+      saveUninitialized: false,
+      store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URL,
+        ttl: 600000,
+        autoRemove: "native",
+      }),
+      cookie: {
+        maxAge: 600000
+      }
+    })
+  );
+  app.use(passport.initialize());
+  app.use(passport.session());
+  app.use(flash());
+
+  app.use("/api/productos", apiProductos);
+  app.use("/api/carrito", apiCarritos);
 
   app.use(errorHandler);
   app.use(notFound);
