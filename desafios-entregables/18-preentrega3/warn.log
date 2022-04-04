@@ -9,3 +9,11 @@
 [2022-04-03T12:54:53.298] [WARN] default - Error: Ese carrito no existe o no tiene productos
     at getProductsFromCart (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:11:13)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-03T20:40:20.355] [WARN] default - Ruta /api/ método GET no implementados
+[2022-04-03T20:40:20.484] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-03T20:56:31.275] [WARN] default - Ruta /api/login método GET no implementados
+[2022-04-03T20:58:43.138] [WARN] default - Ruta /api/login método POST no implementados
+[2022-04-03T20:59:58.037] [WARN] default - User Not Found with email mark
+[2022-04-03T20:59:59.285] [WARN] default - Ruta /api/errorlogin método POST no implementados
+[2022-04-03T21:05:19.189] [WARN] default - User Not Found with email mark
+[2022-04-03T21:05:20.286] [WARN] default - Ruta /api/errorlogin método POST no implementados

@@ -11,7 +11,7 @@ const passportStrategy = require("./src/utils/passport");
 const MongoStore = require("connect-mongo");
 const flash = require('connect-flash');
 
-const clusterMode = true;
+const clusterMode = false;
 const cluster = require("cluster");
 const numCPUs = require("os").cpus().length;
 
@@ -20,6 +20,8 @@ const notFound = require("./src/middlewares/notFound");
 
 const apiProductos = require("./src/routes/productos");
 const apiCarritos = require("./src/routes/carritos");
+const login = require("./src/routes/login");
+const register = require("./src/routes/register");
 
 if (cluster.isMaster && clusterMode) {
   logger.info(`PID MASTER ${process.pid}`);
@@ -58,6 +60,8 @@ else {
 
   app.use("/api/productos", apiProductos);
   app.use("/api/carrito", apiCarritos);
+  app.use("/api", login);
+  app.use("/api", register);
 
   app.use(errorHandler);
   app.use(notFound);
