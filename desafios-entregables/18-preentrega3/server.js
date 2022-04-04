@@ -21,6 +21,7 @@ const notFound = require("./src/middlewares/notFound");
 const apiProductos = require("./src/routes/productos");
 const apiCarritos = require("./src/routes/carritos");
 const login = require("./src/routes/login");
+const logout = require("./src/routes/logout");
 const register = require("./src/routes/register");
 
 if (cluster.isMaster && clusterMode) {
@@ -62,6 +63,7 @@ else {
   app.use("/api/carrito", apiCarritos);
   app.use("/api", login);
   app.use("/api", register);
+  app.use("/api", logout);
 
   app.use(errorHandler);
   app.use(notFound);

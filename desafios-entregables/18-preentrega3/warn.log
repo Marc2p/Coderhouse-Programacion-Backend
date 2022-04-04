@@ -17,3 +17,12 @@
 [2022-04-03T20:59:59.285] [WARN] default - Ruta /api/errorlogin método POST no implementados
 [2022-04-03T21:05:19.189] [WARN] default - User Not Found with email mark
 [2022-04-03T21:05:20.286] [WARN] default - Ruta /api/errorlogin método POST no implementados
+[2022-04-04T09:13:38.041] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-04T09:28:00.987] [WARN] default - User Not Found with email marcos@gjg.com
+[2022-04-04T09:43:23.017] [WARN] default - User already exists with username: aaa@bbb.ccc
+[2022-04-04T10:19:00.605] [WARN] default - TypeError: Cannot read properties of undefined (reading 'username')
+    at getProductos (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/productos.js:12:65)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-04T10:41:29.595] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-04T10:56:50.239] [WARN] default - Ruta /logout método GET no implementados
+[2022-04-04T10:57:55.005] [WARN] default - Ruta /logout método GET no implementados

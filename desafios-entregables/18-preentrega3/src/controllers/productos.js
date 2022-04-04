@@ -9,7 +9,11 @@ const getProductos = async (req, res, next) => {
       if (arrayDeProductos.length <= 0) {
         throw new Error("No hay productos");
       }
-      res.json({"productos": arrayDeProductos});
+      if (req.isAuthenticated()) {
+        res.json({"productos": arrayDeProductos, "user": req.user});
+      } else {
+        res.json({"productos": arrayDeProductos});
+      }
     } else {
       const producto = await productos.getProductById(id).then((resolve) => resolve);
       if (!producto) {
