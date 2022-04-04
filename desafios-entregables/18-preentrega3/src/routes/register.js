@@ -3,7 +3,7 @@ const passport = require("passport");
 const { Router } = express;
 const register = Router();
 
-register.post("/register", passport.authenticate("signup", { successRedirect: "/api/productos", failureRedirect: "/api/errorsignup"}))
+register.post("/register", passport.authenticate("signup", { successRedirect: "/", failureRedirect: "/api/errorsignup"}))
 .get("/errorsignup", (req, res) => {
   res.json({message: req.flash('message')});
 });

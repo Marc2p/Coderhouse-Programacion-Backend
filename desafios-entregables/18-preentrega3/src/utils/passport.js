@@ -60,7 +60,7 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, usern
         }
         let mailOptions = {
           from: "Preentrega 3 Marcos Peirone",
-          to: transporter.auth.user,
+          to: "marion.kuphal90@ethereal.email",
           subject: "Nuevo registro",
           text: `Datos de registro:
           Email: ${newUser.username}
@@ -70,12 +70,15 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, usern
           Edad: ${newUser.age},
           Teléfono: ${newUser.phone}`
         };
-        let info = transporter.sendMail(mailOptions).then((info) => {
-          logger.info("Message sent: %s", info.messageId);
-          logger.info("Preview URL: %s", nodemailer.getTestMessageUrl(info));
-        }).catch((err) => {
-          logger.error("Error al enviar mail: " + err);
+        let info = transporter.sendMail(mailOptions, (err, info) => {
+          if (err) {
+            logger.error("Error al enviar mail: " + err);
+          } else {
+            logger.info("Message sent: %s", info.messageId);
+            logger.info("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+          }
         });
+
         logger.info('User Registration succesful');    
         return done(null, newUser);
       });
