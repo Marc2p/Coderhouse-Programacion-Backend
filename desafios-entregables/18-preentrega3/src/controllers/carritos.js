@@ -80,4 +80,23 @@ const deleteCart = async (req, res, next) => {
   }
 }
 
-module.exports = { getProductsFromCart, postCart, addProductToCart, deleteProductFromCart, deleteCart };
+const procesar = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    if (req.isAuthenticated()) {
+      const user = req.user;
+      const pedido = await carritos.procesarPedido(id, user._id);
+      if (!pedido) {
+        throw new Error("Ha ocurrido un error");
+      }
+      res.json(pedido);
+    }
+    else {
+      throw new Error("Debes estar autenticado para enviar pedidos");
+    }
+  } catch (error) {
+    next(error);
+  }
+}
+
+module.exports = { getProductsFromCart, postCart, addProductToCart, deleteProductFromCart, deleteCart, procesar };

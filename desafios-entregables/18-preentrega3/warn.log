@@ -29,3 +29,54 @@
 [2022-04-04T14:39:29.706] [WARN] default - Ruta /favicon.ico método GET no implementados
 [2022-04-04T16:56:52.893] [WARN] default - Ruta /favicon.ico método GET no implementados
 [2022-04-04T17:00:36.648] [WARN] default - User already exists with username: pruebaemail@email.com
+[2022-04-04T17:18:04.306] [WARN] default - Error: Producto no encontrado
+    at Productos.getProductById (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/productos.js:23:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async postCart (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:22:22)
+[2022-04-04T17:18:04.309] [WARN] default - Error: No se puede crear el carrito porque el producto no existe
+    at postCart (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:24:13)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-04T17:20:42.890] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-04T17:21:10.482] [WARN] default - SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at parse (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/body-parser/lib/types/json.js:89:19)
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/body-parser/lib/read.js:121:18
+    at invokeCallback (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/raw-body/index.js:224:16)
+    at done (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/raw-body/index.js:213:7)
+    at IncomingMessage.onEnd (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/raw-body/index.js:273:7)
+    at IncomingMessage.emit (node:events:402:35)
+    at endReadableNT (node:internal/streams/readable:1343:12)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+  expose: true,
+  statusCode: 400,
+  status: 400,
+  body: '{"id_product": "6249baeb2d5212170d5fb768"',
+  type: 'entity.parse.failed'
+}
+[2022-04-04T17:35:51.251] [WARN] default - Ruta /api/carrito/624b5361f53b92421c2f34c7 método GET no implementados
+[2022-04-04T18:19:24.433] [WARN] default - User Not Found with email aa@bb.cc
+[2022-04-04T18:39:43.602] [WARN] default - Error: MongoBulkWriteError: E11000 duplicate key error collection: ecommerce.pedidos index: _id_ dup key: { _id: ObjectId('624b5361f53b92421c2f34c7') }
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:89:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:88:27)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:89:22)
+[2022-04-04T18:39:43.605] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:91:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-04T18:51:45.105] [WARN] default - Error: MongoBulkWriteError: E11000 duplicate key error collection: ecommerce.pedidos index: _id_ dup key: { _id: ObjectId('624b5361f53b92421c2f34c7') }
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:89:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:88:27)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:89:22)
+[2022-04-04T18:51:45.108] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:91:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-04T19:50:22.320] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-04T19:50:36.832] [WARN] default - Error: MongoBulkWriteError: E11000 duplicate key error collection: ecommerce.pedidos index: _id_ dup key: { _id: ObjectId('624b5361f53b92421c2f34c7') }
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:89:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:88:27)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:89:22)
+[2022-04-04T19:50:36.834] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:91:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
