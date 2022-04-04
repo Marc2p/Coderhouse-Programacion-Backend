@@ -1,9 +1,19 @@
-const logger = require('./logger');
+const nodemailer = require("nodemailer");
+const logger = require("./logger");
 const User = require("../models/user");
 const bCrypt = require ("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const flash = require('connect-flash');
+const flash = require("connect-flash");
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp.ethereal.email',
+  port: 587,
+  auth: {
+    user: 'marion.kuphal90@ethereal.email',
+    pass: 'HPEunpnpNT63t3xhjC'
+  }
+}); 
 
 passport.use(
   "login",
@@ -48,6 +58,24 @@ passport.use('signup', new LocalStrategy({passReqToCallback : true}, (req, usern
           logger.error('Error in Saving user: '+err);  
           throw err;  
         }
+        let mailOptions = {
+          from: "Preentrega 3 Marcos Peirone",
+          to: transporter.auth.user,
+          subject: "Nuevo registro",
+          text: `Datos de registro:
+          Email: ${newUser.username}
+          Contraseña: ${password},
+          Nombre: ${newUser.name},
+          Dirección: ${newUser.address},
+          Edad: ${newUser.age},
+          Teléfono: ${newUser.phone}`
+        };
+        let info = transporter.sendMail(mailOptions).then((info) => {
+          logger.info("Message sent: %s", info.messageId);
+          logger.info("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+        }).catch((err) => {
+          logger.error("Error al enviar mail: " + err);
+        });
         logger.info('User Registration succesful');    
         return done(null, newUser);
       });
