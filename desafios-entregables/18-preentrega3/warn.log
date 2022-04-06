@@ -80,3 +80,124 @@
 [2022-04-04T19:50:36.834] [WARN] default - Error: Ha ocurrido un error
     at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:91:15)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-05T09:11:34.151] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-05T09:11:54.497] [WARN] default - TypeError: Assignment to constant variable.
+    at Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:85:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-05T09:11:54.499] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-05T09:12:51.654] [WARN] default - TypeError: Assignment to constant variable.
+    at Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:85:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-05T09:12:51.656] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-05T09:29:24.988] [WARN] default - ObjectParameterError: Parameter "obj" to Document() must be an object, got {
+  _id: new ObjectId("624b5361f53b92421c2f34c7"),
+  timestamp: 2022-04-04T20:21:53.164Z,
+  productos: [
+    {
+      _id: new ObjectId("6249baeb2d5212170d5fb768"),
+      title: 'Producto de prueba',
+      description: 'producto de prueba',
+      code: 'a1b2c3',
+      thumbnail: 'http://google.com',
+      price: 1394,
+      stock: 100,
+      timestamp: 2022-04-03T15:19:07.093Z,
+      __v: 0
+    }
+  ],
+  __v: 0
+}[object Object]
+    at model.Document (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/document.js:104:11)
+    at model.Model (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/model.js:107:12)
+    at new model (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/model.js:4794:15)
+    at Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:87:26)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-05T09:29:24.992] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-05T09:32:12.685] [WARN] default - ObjectParameterError: Parameter "obj" to Document() must be an object, got {
+  _id: new ObjectId("624b5361f53b92421c2f34c7"),
+  timestamp: 2022-04-04T20:21:53.164Z,
+  productos: [
+    {
+      _id: new ObjectId("6249baeb2d5212170d5fb768"),
+      title: 'Producto de prueba',
+      description: 'producto de prueba',
+      code: 'a1b2c3',
+      thumbnail: 'http://google.com',
+      price: 1394,
+      stock: 100,
+      timestamp: 2022-04-03T15:19:07.093Z,
+      __v: 0
+    }
+  ],
+  __v: 0
+}[object Object]
+    at model.Document (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/document.js:104:11)
+    at model.Model (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/model.js:107:12)
+    at new model (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/mongoose/lib/model.js:4794:15)
+    at Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:87:26)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-05T09:32:12.687] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T10:28:02.064] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-06T10:36:07.825] [WARN] default - TypeError: Assignment to constant variable.
+    at Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:92:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-06T10:36:07.828] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T10:40:23.901] [WARN] default - Error: MongoBulkWriteError: E11000 duplicate key error collection: ecommerce.pedidos index: _id_ dup key: { _id: ObjectId('624b5361f53b92421c2f34c7') }
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:96:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:95:27)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-06T10:40:23.903] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T13:39:20.637] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-06T13:39:40.576] [WARN] default - Error: MongoBulkWriteError: E11000 duplicate key error collection: ecommerce.pedidos index: _id_ dup key: { _id: ObjectId('624b5361f53b92421c2f34c7') }
+    at /home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:96:15
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Carritos.procesarPedido (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/daos/carritos.js:95:27)
+    at async procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:88:22)
+[2022-04-06T13:39:40.577] [WARN] default - Error: Ha ocurrido un error
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:90:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T15:54:33.077] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-06T15:57:59.180] [WARN] default - Ruta /carrito método POST no implementados
+[2022-04-06T15:58:39.881] [WARN] default - Ruta /login.html método POST no implementados
+[2022-04-06T15:59:20.558] [WARN] default - Ruta /api/errorlogin método POST no implementados
+[2022-04-06T16:01:41.530] [WARN] default - Ruta / método POST no implementados
+[2022-04-06T16:44:26.563] [WARN] default - TypeError: Cannot read properties of undefined (reading 'name')
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:110:48)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T16:58:42.719] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-06T16:59:10.511] [WARN] default - TypeError: Cannot read properties of undefined (reading '_id')
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:109:24)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:01:56.009] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:126:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:03:39.073] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:128:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:04:59.985] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:128:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:05:24.346] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:128:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:06:09.600] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:128:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)

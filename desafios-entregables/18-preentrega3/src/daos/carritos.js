@@ -1,6 +1,5 @@
 const logger = require('../utils/logger');
 const CartModel = require("../models/cartSchema");
-const PedidoModel = require("../models/pedidoSchema");
 
 class Carritos {
   constructor() {}
@@ -11,7 +10,7 @@ class Carritos {
       if (!carrito) {
         throw new Error("Carrito no encontrado");
       }
-      const productos = await CartModel.findById(id).populate('productos');
+      const productos = await CartModel.findById(id).populate('productos').populate('usuario');
       if (!productos) {
         throw new Error("No hay productos en el carrito");
       }
@@ -74,21 +73,6 @@ class Carritos {
         throw new Error(err);
       });
       return product;
-    } catch (error) {
-      logger.warn(error);
-    }
-  }
-
-  async procesarPedido(id, user) {
-    try {
-      const carrito = await this.getProductsFromCart(id);
-      carrito.usuario = user;
-      console.log(carrito);
-      const savePedido = new PedidoModel(carrito);
-      const savedPedido = await PedidoModel.insertMany(savePedido).then((pedido) => pedido).catch((err) => {
-        throw new Error(err);
-      });
-      return savedPedido;
     } catch (error) {
       logger.warn(error);
     }

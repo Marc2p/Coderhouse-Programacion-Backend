@@ -6,7 +6,7 @@ const apiCarritos = Router();
 
 apiCarritos.get("/:id/productos", cartsControllers.getProductsFromCart)
 .get("/:id/procesar", isAuth, cartsControllers.procesar)
-.post("/", cartsControllers.postCart)
+.post("/", isAuth, cartsControllers.postCart)
 .post('/:id/productos', cartsControllers.addProductToCart)
 .delete("/:id/productos/:id_prod", cartsControllers.deleteProductFromCart)
 .delete("/:id", cartsControllers.deleteCart);

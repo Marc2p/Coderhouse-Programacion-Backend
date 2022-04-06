@@ -11,7 +11,11 @@ const cartSchema = mongoose.Schema({
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Productos'
     }
-  ]
+  ],
+  usuario: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 const CartModel = mongoose.model('Carritos', cartSchema);
