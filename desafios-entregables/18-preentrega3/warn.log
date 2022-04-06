@@ -201,3 +201,30 @@
 [2022-04-06T17:06:09.600] [WARN] default - Error: Ese carrito no te corresponde
     at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:128:15)
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:50:17.183] [WARN] default - Ruta /favicon.ico método GET no implementados
+[2022-04-06T17:51:11.073] [WARN] default - TypeError: Cannot read properties of undefined (reading 'username')
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:114:24)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:51:31.163] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:137:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T17:52:38.198] [WARN] default - Ruta / método POST no implementados
+[2022-04-06T17:53:12.266] [WARN] default - Error: Ese carrito no te corresponde
+    at procesar (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/src/controllers/carritos.js:137:15)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[2022-04-06T18:17:59.043] [WARN] default - Ruta / método POST no implementados
+[2022-04-06T18:18:47.524] [WARN] default - RestException [Error]: Twilio could not find a Channel with the specified From address
+    at success (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/twilio/lib/base/Version.js:135:15)
+    at Promise_then_fulfilled (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/q/q.js:766:44)
+    at Promise_done_fulfilled (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/q/q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/q/q.js:1229:9)
+    at Pending_become_eachMessage_task (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/q/q.js:1369:30)
+    at RawTask.call (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/asap/asap.js:40:19)
+    at flush (/home/marcos/coderhouse/ProgramacionBackEnd/repo/desafios-entregables/18-preentrega3/node_modules/asap/raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: undefined
+}
+[2022-04-06T18:40:15.505] [WARN] default - Ruta / método POST no implementados

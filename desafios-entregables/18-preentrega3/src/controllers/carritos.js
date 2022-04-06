@@ -1,5 +1,6 @@
 const logger = require('../utils/logger');
 const nodemailer = require("nodemailer");
+const twilio = require("twilio");
 const Carritos = require("../daos/carritos");
 const Productos = require("../daos/productos");
 
@@ -11,6 +12,10 @@ const transporter = nodemailer.createTransport({
     pass: 'HPEunpnpNT63t3xhjC'
   }
 });
+
+const accountSid = "ACd04facc2726e30a5d4c622cc39fc4dc0";
+const authToken = "58352f9abd86b053292e95d1996a1663";
+const client = twilio(accountSid, authToken);
 
 let carritos = new Carritos();
 let productos = new Productos();
@@ -122,6 +127,18 @@ const procesar = async (req, res, next) => {
             logger.info("Preview URL: %s", nodemailer.getTestMessageUrl(info));
           }
         });
+        const message = await client.messages.create({
+          body: "El pedido se encuentra en proceso",
+          from: "+12543473241",
+          to: cart.usuario.phone
+        });
+        logger.info(message);
+        const whatsapp = await client.messages.create({
+          body: `Nuevo pedido de ${cart.usuario.name} (${cart.usuario.username})`,
+          from: "whatsapp:+14155238886",
+          to: `whatsapp:${cart.usuario.phone}`
+        });
+        logger.info(whatsapp);
       } else {
         throw new Error("Ese carrito no te corresponde");
       }
