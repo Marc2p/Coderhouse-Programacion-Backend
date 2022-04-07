@@ -1,21 +1,9 @@
 const logger = require('../utils/logger');
 const nodemailer = require("nodemailer");
-const twilio = require("twilio");
+const transporter = require("../utils/mail");
+const client = require("../utils/twilio");
 const Carritos = require("../daos/carritos");
 const Productos = require("../daos/productos");
-
-const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
-  auth: {
-    user: 'marion.kuphal90@ethereal.email',
-    pass: 'HPEunpnpNT63t3xhjC'
-  }
-});
-
-const accountSid = "ACd04facc2726e30a5d4c622cc39fc4dc0";
-const authToken = "58352f9abd86b053292e95d1996a1663";
-const client = twilio(accountSid, authToken);
 
 let carritos = new Carritos();
 let productos = new Productos();
@@ -129,13 +117,13 @@ const procesar = async (req, res, next) => {
         });
         const message = await client.messages.create({
           body: "El pedido se encuentra en proceso",
-          from: "+12543473241",
+          from: process.env.TWILIO_NUMBER,
           to: cart.usuario.phone
         });
         logger.info(message);
         const whatsapp = await client.messages.create({
           body: `Nuevo pedido de ${cart.usuario.name} (${cart.usuario.username})`,
-          from: "whatsapp:+14155238886",
+          from: process.env.TWILIO_WH_NUMBER,
           to: `whatsapp:${cart.usuario.phone}`
         });
         logger.info(whatsapp);

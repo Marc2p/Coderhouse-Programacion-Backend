@@ -1,19 +1,11 @@
 const nodemailer = require("nodemailer");
+const transporter = require("./mail");
 const logger = require("./logger");
 const User = require("../models/user");
 const bCrypt = require ("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash = require("connect-flash");
-
-const transporter = nodemailer.createTransport({
-  host: 'smtp.ethereal.email',
-  port: 587,
-  auth: {
-    user: 'marion.kuphal90@ethereal.email',
-    pass: 'HPEunpnpNT63t3xhjC'
-  }
-}); 
 
 passport.use(
   "login",
