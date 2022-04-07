@@ -1,5 +1,5 @@
 {
-  "name": "06-websockets",
+  "name": "16-Loggers-gzip-analisis-performance",
   "version": "1.0.0",
   "description": "Desafio 6, websockets",
   "main": "server.js",

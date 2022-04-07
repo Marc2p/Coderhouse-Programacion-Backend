@@ -1,5 +1,5 @@
 {
-  "name": "06-websockets",
+  "name": "15-servidor-con-balance-de-carga",
   "version": "1.0.0",
   "description": "Desafio 6, websockets",
   "main": "server.js",

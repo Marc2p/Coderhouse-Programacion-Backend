@@ -1,5 +1,5 @@
 {
-  "name": "06-websockets",
+  "name": "13-inicio-de-sesion",
   "version": "1.0.0",
   "description": "Desafio 6, websockets",
   "main": "server.js",
