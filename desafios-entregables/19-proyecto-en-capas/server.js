@@ -1,8 +1,6 @@
 const {MONGOURL, PORT} = require("./src/config");
 require("./src/mongodb/mongooseLoader");
 // const {fork} = require('child_process');
-const { normalizar, print, denormalizar } = require("./src/utils/normalizar");
-const Chat = require("./src/contenedores/chat");
 const express = require("express");
 const session = require("express-session");
 const passport = require("passport");
@@ -18,7 +16,23 @@ const cluster = require('cluster')
 const numCPUs = require('os').cpus().length
 const compression = require('compression');
 const logger = require('./src/utils/logger.js');
-app.use(compression());
+
+const errorHandler = require("./src/middlewares/errorHandler");
+const notFound = require("./src/middlewares/notFound");
+
+const allRoute = require("./src/route/all");
+const infoRoute = require("./src/route/info");
+const loginRoute = require("./src/route/login")
+const productRoutes = require("./src/route/productos");
+const registerRoute = require("./src/route/register");
+const renderRoute = require("./src/route/render");
+
+const { normalizar, print, denormalizar } = require("./src/utils/normalizar");
+const ApiProductosMock = require("./src/api/productos");
+const apiProductos = new ApiProductosMock();
+const Chat = require("./src/daos/chat");
+let chat = new Chat("./src/daos/chat.txt");
+
 
 if (cluster.isMaster && PORT.m == 'CLUSTER') {
   logger.info(`PID MASTER ${process.pid}`)
@@ -44,6 +58,7 @@ else {
   app.use(express.static("./public"));
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use(compression());
   app.use(
     session({
       secret: "AlckejcUi5Jnm3rFhNjUil87",
@@ -60,26 +75,19 @@ else {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  let chat = new Chat("./contenedores/chat.txt");
-
   io.on("connection", async (socket) => {
-    console.log("Un cliente se ha conectado");
-
+    logger.info("Un cliente se ha conectado");
     const arrayDeProductos = await apiProductos.getAll();
     const messages = await chat.getMessages().then((res) => res);
     const normalizedMessages = normalizar(messages);
     const denormalizedMessages = denormalizar(normalizedMessages);
-
     socket.emit("productos", arrayDeProductos);
     socket.emit("messages", normalizedMessages);
-
     socket.on("new-product", async (data) => {
-      await productos.save(data).then((resolve) => resolve);
+      await apiProductos.save(data);
       const arrayDeProductos = await apiProductos.getAll();
-
       io.sockets.emit("productos", arrayDeProductos);
     });
-
     socket.on("new-message", async (data) => {
       await chat.saveMessages(data).then((resolve) => resolve);
       const messages = await chat.getMessages().then((resolve) => resolve);
@@ -88,24 +96,24 @@ else {
     });
   });
 
-app.all('/*', (req, res, next) => {
-  logger.info(`${req.method} a ${req.path}`);
-  next();
-})
+  app.use("/*", allRoute);
+  app.use("/", infoRoute);
+  app.use("/api", loginRoute);
+  app.use("/api", productRoutes);
+  app.use("/api", registerRoute);
+  app.use("/api", renderRoute);
 
 
-/* desactivo el child process para el análisis de performance
-app.get("/random/:cant?", (req, res) => {
-  const forked = fork('./utils/generateRandom.js');
-  let cant = +req.params.cant || 100000000;
-  forked.send(cant);
-  forked.on('message', (numeros) => {
-    res.send(numeros.res);
+  /* desactivo el child process para el análisis de performance
+  app.get("/random/:cant?", (req, res) => {
+    const forked = fork('./utils/generateRandom.js');
+    let cant = +req.params.cant || 100000000;
+    forked.send(cant);
+    forked.on('message', (numeros) => {
+      res.send(numeros.res);
+    })
   })
-})
-*/
-
-apiRouter.post('/signup', passport.authenticate('signup', { successRedirect: '/api', failureRedirect: '/api/errorsignup'}));
+  */
 
 const srv = server.listen(PORT.p, () => {
   logger.info(

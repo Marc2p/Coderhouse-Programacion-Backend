@@ -2,7 +2,7 @@ const express = require("express");
 const renderControllers = require("../controllers/render");
 const { Router } = express;
 const render = Router();
-render.get("/", formRender)
+render.get("/", renderControllers.formRender)
 .get("/signin", renderControllers.loginRender)
 .get("/signup", renderControllers.signupRender)
 .get("/logout", renderControllers.logoutRender)

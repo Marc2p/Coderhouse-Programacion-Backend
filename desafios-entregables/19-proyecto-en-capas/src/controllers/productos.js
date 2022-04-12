@@ -1,4 +1,4 @@
-const ApiProductosMock = require("./src/api/productos");
+const ApiProductosMock = require("../api/productos");
 const apiProductos = new ApiProductosMock();
 
 const getProductosTest = async (req, res, next) => {

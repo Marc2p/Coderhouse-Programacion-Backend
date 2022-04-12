@@ -20,7 +20,7 @@ const logoutRender = (req, res) => {
   res.redirect('/api');
 };
 
-const errorLogin (req, res) => {
+const errorLogin = (req, res) => {
   res.render('errorlogin', {message: req.flash('message')})
 };
 
