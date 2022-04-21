@@ -28,8 +28,7 @@ const registerRoute = require("./route/register");
 const renderRoute = require("./route/render");
 
 const { normalizar, print, denormalizar } = require("./utils/normalizar");
-const ApiProductosMock = require("./api/productos");
-const apiProductos = new ApiProductosMock();
+const productService = require('./services/productService');
 const Chat = require("./daos/chat");
 let chat = new Chat("./daos/chat.txt");
 
@@ -77,15 +76,15 @@ else {
 
   io.on("connection", async (socket) => {
     logger.info("Un cliente se ha conectado");
-    const arrayDeProductos = await apiProductos.getAll();
+    const arrayDeProductos = await productService.getAll();
     const messages = await chat.getMessages().then((res) => res);
     const normalizedMessages = normalizar(messages);
     const denormalizedMessages = denormalizar(normalizedMessages);
     socket.emit("productos", arrayDeProductos);
     socket.emit("messages", normalizedMessages);
     socket.on("new-product", async (data) => {
-      await apiProductos.save(data);
-      const arrayDeProductos = await apiProductos.getAll();
+      await productService.save(data);
+      const arrayDeProductos = await productService.getAll();
       io.sockets.emit("productos", arrayDeProductos);
     });
     socket.on("new-message", async (data) => {

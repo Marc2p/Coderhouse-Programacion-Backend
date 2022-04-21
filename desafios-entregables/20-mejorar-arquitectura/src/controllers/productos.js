@@ -1,9 +1,8 @@
-const ApiProductosMock = require("../api/productos");
-const apiProductos = new ApiProductosMock();
+const productService = require('../services/productService');
 
 const getProductosTest = async (req, res, next) => {
   try {
-    const arrayDeProductos = await apiProductos.getAll();
+    const arrayDeProductos = await productService.getAll();
     if (arrayDeProductos.length === 0) {
       throw new Error("No hay productos");
     }
@@ -15,7 +14,7 @@ const getProductosTest = async (req, res, next) => {
 
 const getProductById = async (req, res, next) => {
   try {
-    const producto = await productos.getById(Number(req.params.id)).then((resolve) => resolve);
+    const producto = await productService.getById(Number(req.params.id)).then((resolve) => resolve);
     if (!producto) {
       throw new Error("Producto no encontrado");
     }
@@ -27,7 +26,7 @@ const getProductById = async (req, res, next) => {
 
 const postProducto = async (req, res, next) => {
   try {
-    res.json(await apiProductos.popular(req.query.cant));
+    res.json(await productService.popular(req.query.cant));
   } catch (err) {
     next(err);
   }
@@ -35,11 +34,11 @@ const postProducto = async (req, res, next) => {
 
 const updateProduct = async (req, res, next) => {
   try {
-    const producto = await productos.getById(+req.params.id).then((res) => res);
+    const producto = await productService.getById(+req.params.id).then((res) => res);
     if (!producto) {
       throw new Error("Producto no encontrado");
     }
-    await productos.update(+req.params.id,req.body.title,req.body.price,req.body.thumbnail).then((resolve) => {
+    await productService.update(+req.params.id,req.body.title,req.body.price,req.body.thumbnail).then((resolve) => {
       res.json(resolve);
     });
   } catch (err) {
@@ -49,11 +48,11 @@ const updateProduct = async (req, res, next) => {
 
 const deleteProduct = async (req, res, next) => {
   try {
-    const producto = await productos.getById(+req.params.id).then((resolve) => resolve);
+    const producto = await productService.getById(+req.params.id).then((resolve) => resolve);
     if (!producto) {
       throw new Error("Producto no encontrado");
     }
-    await productos.deleteById(+req.params.id).then((resolve) => {
+    await productService.deleteById(+req.params.id).then((resolve) => {
       res.json(`${producto.title} se borro con éxito`);
     });
   } catch (err) {

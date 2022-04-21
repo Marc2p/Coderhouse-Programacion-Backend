@@ -1,127 +1,96 @@
 const fs = require("fs");
+const generarProductos = require('../utils/generador-productos')
+const generarIds = require('../utils/generador-ids')
 
 class ProductoDaoFile {
-  #initialize = false;
+  #ready = false;
   constructor(archivo) {
     this.archivo = archivo;
+    this.productos = []
+  }
+  async init() {
+    try {
+      await fs.promises.readFile(this.archivo, 'utf-8')
+      this.#ready = true
+      console.log('productos dao en archivo -> listo')
+    } catch (error) {
+      await fs.promises.writeFile(this.archivo, '[]')
+      this.#ready = true
+      console.log('Productos dao en archivo -> listo')
+    }
+  }
+
+  disconnect() {
+    console.log('productos dao en archivo -> cerrado')
+  }
+
+  #checkReady() {
+    if (!this.#ready) throw new Error('INTERNAL_ERROR: dao no conectado!')
+  }
+
+  async #leerArchivo() {
+    this.#checkReady()
+    const texto = await fs.promises.readFile(this.archivo, 'utf-8')
+    this.productos = JSON.parse(texto)
+  }
+
+  async #escribirArchivo() {
+    this.#checkReady()
+    const texto = JSON.stringify(this.productos, null, 2)
+    await fs.promises.writeFile(this.archivo, texto)
+  }
+
+  #getIndex(id) {
+    return this.productos.findIndex(producto => producto.id === id)
   }
 
   async getAll() {
-    try {
-      const contenido = await fs.promises.readFile(this.archivo, "utf-8");
-      if (!contenido) {
-        const productos = [];
-        fs.writeFileSync(this.archivo, JSON.stringify(productos));
-        return productos;
-      }
-      const datos = JSON.parse(contenido);
-      return datos;
-    } catch (error) {
-      throw error;
-    }
+    await this.#leerArchivo()
+    return asDto(this.productos);
   }
 
   async getById(id) {
-    try {
-      const array = await this.getAll()
-        .then((res) => res)
-        .catch((err) => {
-          throw err;
-        });
-      if (array.length <= 0) {
-        return null;
-      }
-      for (let i = 0; i < array.length; i++) {
-        if (array[i].id === id) {
-          return array[i];
-        }
-      }
-      return null;
-    } catch (error) {
-      throw error;
-    }
+    await this.#leerArchivo()
+    return asDto(this.productos[ this.#getIndex(id) ])
   }
 
   async save(obj) {
-    try {
-      const array = await this.getAll()
-        .then((res) => res)
-        .catch((error) => {
-          throw error;
-        });
-      if (array.length <= 0) {
-        obj.id = 1;
-        array.push(obj);
-        const data = JSON.stringify(array);
-        fs.writeFileSync(this.archivo, data, "utf-8");
-        return obj;
-      }
-      obj.id = array.length + 1;
-      array.push(obj);
-      const data = JSON.stringify(array);
-      fs.writeFileSync(this.archivo, data, "utf-8");
-      return obj;
-    } catch (error) {
-      throw error;
-    }
+    await this.#leerArchivo()
+    this.productos.push(o)
+    await this.#escribirArchivo()
+    return asDto(obj)
   }
+
+  popular(cant = 5) {
+    const nuevos = []
+    for (let i = 0; i < cant; i++) {
+      const nuevoProducto = generarProductos(generarIds())
+      const guardado = this.save(nuevoProducto)
+      nuevos.push(guardado)
+    }
+    return asDto(nuevos)
+  }
+
+  async deleteById(idParaBorrar) {
+    await this.#leerArchivo()
+    const [ borrada ] = this.productos.splice(this.#getIndex(idParaBorrar), 1)
+    await this.#escribirArchivo()
+    return asDto(borrada)
+}
 
   async deleteAll() {
-    try {
-      const array = await this.getAll()
-        .then((res) => res)
-        .catch((error) => {
-          throw error;
-        });
-      if (array.length >= 1) {
-        fs.writeFileSync(this.archivo, JSON.stringify([]));
-      }
-    } catch (error) {
-      throw error;
-    }
+    this.productos = []
+    await this.#escribirArchivo()
   }
 
-  async deleteById(id) {
-    try {
-      let array = await this.getAll()
-        .then((res) => res)
-        .catch((error) => {
-          throw error;
-        });
-      if (array.length >= 1) {
-        array = array.filter((obj) => {
-          return obj.id !== id;
-        });
-        for (let i = 0; i < array.length; i++) {
-          if (array[i].id > id) {
-            array[i].id -= 1;
-          }
-        }
-        fs.writeFileSync(this.archivo, JSON.stringify(array), "utf-8");
-      }
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  async update(id, title, price, thumbnail) {
-    try {
-      const productos = await this.getAll().then((res) => res);
-      productos.map((producto) => {
-        if (producto.id === id) {
-          producto.title = title ? title : producto.title;
-          producto.price = price ? price : producto.price;
-          producto.thumbnail = thumbnail ? thumbnail : producto.thumbnail;
-        }
-      });
-      await this.deleteAll();
-      fs.writeFileSync(this.archivo, JSON.stringify(productos), "utf-8");
-      const productoActualizado = await this.getById(id).then((res) => res);
-      return productoActualizado;
-    } catch (error) {
-      throw error;
-    }
+  async update(id, campos) {
+    await this.#leerArchivo()
+    const index = this.#getIndex(id)
+    const actualizada = { ...this.productos[ index ], ...campos }
+    this.productos.splice(index, 1, actualizada)
+    await this.#escribirArchivo()
+    return asDto(actualizada)
   }
 }
 
-module.exports = Contenedor;
+module.exports = ProductoDaoFile;
