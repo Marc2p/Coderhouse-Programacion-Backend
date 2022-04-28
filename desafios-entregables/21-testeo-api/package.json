@@ -12,6 +12,7 @@
   "dependencies": {
     "@faker-js/faker": "^6.0.0-alpha.6",
     "autocannon": "^7.7.2",
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "chai": "^4.3.6",
     "compression": "^1.7.4",
