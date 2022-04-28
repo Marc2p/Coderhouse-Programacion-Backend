@@ -1,3 +1,4 @@
+const logger = require('../utils/logger');
 const ProductAdapter = require('../adapters/productAdapter');
 const ProductRepo = require('../repos/productRepo');
 const Product = require('../models/productoModel')
