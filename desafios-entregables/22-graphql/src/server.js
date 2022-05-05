@@ -1,3 +1,5 @@
+const { graphqlHTTP } = require('express-graphql');
+const { buildSchema } = require('graphql');
 const {MONGOURL, PORT} = require("./config/config");
 require("./mongodb/mongooseLoader");
 // const {fork} = require('child_process');
@@ -53,6 +55,61 @@ else {
   );
   app.set("view engine", "hbs");
   app.set("views", "./views");
+
+  function getAllProducts() {
+    const products = productService.getAll();
+    return products;
+  }
+  function getProductById(id) {
+    const product = productService.getById(id);
+    return product;
+  }
+  function saveProduct(product) {
+    const saveProduct = productService.save(product.data);
+    return saveProduct;
+  }
+  function deleteProductById(id) {
+    const productDeleted = productService.deleteById(id);
+    return productDeleted;
+  }
+  function deleteAll() {
+    const productsDeleted = productService.deleteAll();
+    return productsDeleted;
+  }
+  const schema = buildSchema(`
+    type Products {
+      id: ID!,
+      title: String,
+      price: Int,
+      thumbnail: String
+    }
+    input ProductsInput {
+      title: String,
+      price: Int,
+      thumbnail: String
+    }
+    type Query {
+      getAllProducts: [Products],
+      getProductById(id: ID!): Products,
+    }
+    type Mutation {
+      saveProduct(data: ProductsInput): Products,
+      deleteProd(id: ID!): Products,
+      deleteAll:Products,
+    }
+  `);
+
+  app.use('/graphql', graphqlHTTP({
+    schema: schema,
+    rootValue: {
+      getAllProducts,
+      getProductById,
+      saveProduct,
+      deleteProductById,
+      deleteAll,
+    },
+    graphiql: true,
+  }));
 
   app.use(express.static("./public"));
   app.use(express.json());
