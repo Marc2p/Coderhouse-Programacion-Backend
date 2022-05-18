@@ -1,6 +1,9 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
+const { Socket } = require("socket.io");
 const app = express();
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 require("./src/mongodb/mongooseLoader");
 const PORT = process.env.PORT || 8080;
 const logger = require("./src/utils/logger");
@@ -23,6 +26,8 @@ const apiCarritos = require("./src/routes/carritos");
 const login = require("./src/routes/login");
 const logout = require("./src/routes/logout");
 const register = require("./src/routes/register");
+const Chat = require("./src/daos/chat");
+let chat = new Chat();
 
 if (cluster.isMaster && clusterMode) {
   logger.info(`PID MASTER ${process.pid}`);
@@ -59,6 +64,17 @@ else {
   app.use(passport.session());
   app.use(flash());
 
+  io.on("connection", async (socket) => {
+    logger.info("Un cliente se ha conectado");
+    const messages = await chat.getMessages().then((res) => res);
+    socket.emit("messages", messages);
+    socket.on("new-message", async (data) => {
+      await chat.saveMessages(data).then((resolve) => resolve);
+      const messages = await chat.getMessages().then((resolve) => resolve);
+      io.sockets.emit("messages", messages);
+    });
+  });
+
   app.use("/api/productos", apiProductos);
   app.use("/api/carrito", apiCarritos);
   app.use("/api", login);
@@ -68,8 +84,8 @@ else {
   app.use(errorHandler);
   app.use(notFound);
 
-  const server = app.listen(PORT, () => {
-    logger.info(`(Pid: ${process.pid}) Servidor Express escuchando peticiones en el puerto ${server.address().port}`);
+  const srv = server.listen(PORT, () => {
+    logger.info(`(Pid: ${process.pid}) Servidor Express escuchando peticiones en el puerto ${srv.address().port}`);
   });
-  server.on("error", (error) => logger.error(`Error en servidor ${error}`));
+  srv.on("error", (error) => logger.error(`Error en servidor ${error}`));
 }

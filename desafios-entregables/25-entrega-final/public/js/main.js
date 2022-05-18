@@ -1,4 +1,10 @@
-const showProducts = () => {
+let socket = io.connect();
+
+socket.on("messages", (data) => {
+  renderMessages(data);
+});
+
+const showData = () => {
   const route = '/api/productos';
   fetch(route).then((res) => res.json()).then((data) =>{
     if(data.user) {
@@ -30,5 +36,39 @@ const showProducts = () => {
   }).catch((error) => console.log(error));
 }
 
+function renderMessages(data) {
+  let html = data
+    .map((elem, index) => {
+      return `<div>
+        <span style="color: blue; font-weight: bold;">${elem.author}</span>
+        <span style="color: brown;">[${elem.date}]:</span>
+        <span style="color: green; font-style: italic;">${elem.message}</span>
+      </div>`;
+    })
+    .join(" ");
+    document.getElementById("messages").innerHTML = html;
+}
 
-showProducts()
+function addMessage(e) {
+  let message = {
+    author: document.getElementById("author").value, 
+    message: document.getElementById("message").value,
+    date: formatDate()
+  };
+  socket.emit("new-message", message); // new-message es el nombre del evento (recordatorio)
+  document.getElementById("message").value = "";
+  document.getElementById("message").focus();
+  return false;
+}
+
+const formatDate = () => {
+  let date = new Date();
+  let formatted_date = `${date.getDate()}/${("0" + (date.getMonth() + 1)).slice(
+    -2
+  )}/${date.getFullYear()} ${date.getHours()}:${
+    date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+  }:${date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()}`;
+  return formatted_date;
+};
+
+showData()
